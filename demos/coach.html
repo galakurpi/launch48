@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mara Fitness — Personal Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a1413;--card:#0f1f1d;--line:#1d3a36;--ink:#eafaf6;--mut:#86b3ab;--acc:#34d399}
+html{scroll-behavior:smooth}
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-block;background:var(--acc);color:#062018;padding:14px 28px;border-radius:10px;font-weight:700}
+.btn:hover{filter:brightness(1.1)}
+header{position:sticky;top:0;background:rgba(10,20,19,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:17px 0}
+.brand{font-weight:800;font-size:1.3rem}.brand span{color:var(--acc)}
+.links a{margin-left:22px;color:var(--mut);font-weight:600}.links a:hover{color:var(--acc)}
+.hero{text-align:center;padding:84px 0 60px}
+.tag{display:inline-block;border:1px solid var(--line);color:var(--acc);padding:6px 14px;border-radius:99px;font-size:.82rem;font-weight:600;margin-bottom:22px}
+.hero h1{font-size:clamp(2.3rem,5.5vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:18px}
+.hero p{color:var(--mut);font-size:1.18rem;max-width:540px;margin:0 auto 28px}
+.stats{display:flex;gap:46px;justify-content:center;margin-top:46px;flex-wrap:wrap}
+.stat b{display:block;font-size:2.2rem;color:var(--acc);font-weight:800}.stat span{color:var(--mut);font-size:.9rem}
+.section{padding:60px 0}
+.section h2{font-size:clamp(1.7rem,4vw,2.5rem);text-align:center;margin-bottom:8px;font-weight:800}
+.section .lead{text-align:center;color:var(--mut);margin-bottom:42px}
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px}
+.plan.feat{border-color:var(--acc);box-shadow:0 16px 50px rgba(52,211,153,.16)}
+.plan h3{font-size:1.2rem;margin-bottom:6px}
+.plan .pr{font-size:2.2rem;font-weight:800;margin:8px 0 2px}.plan .pr small{font-size:.9rem;color:var(--mut);font-weight:500}
+.plan ul{list-style:none;margin:18px 0}.plan li{color:var(--mut);padding:7px 0;border-bottom:1px solid var(--line)}.plan li:before{content:"✓ ";color:var(--acc)}
+.quote{max-width:680px;margin:0 auto;text-align:center;font-size:1.3rem;font-style:italic;color:var(--ink)}
+.quote span{display:block;margin-top:16px;color:var(--mut);font-size:.95rem;font-style:normal}
+.cta{background:linear-gradient(135deg,#0f766e,#34d399);border-radius:22px;padding:54px;text-align:center;color:#062018}
+.cta h2{color:#062018}.cta p{margin:8px 0 22px;color:#0a3a30}
+.cta .btn{background:#062018;color:#eafaf6}
+footer{text-align:center;color:var(--mut);padding:30px;font-size:.9rem}
+@media(max-width:780px){.plans{grid-template-columns:1fr}.links{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<div class="brand">Mara<span>Fitness</span></div>
+<div class="links"><a href="#plans">Programs</a><a href="#proof">Results</a><a href="#book">Book</a></div>
+<a href="#book" class="btn" style="padding:9px 18px">Free intro call</a>
+</div></header>
+
+<section class="hero"><div class="wrap">
+<span class="tag">Online &amp; in-person · Lisbon</span>
+<h1>Get strong.<br>Stay consistent.</h1>
+<p>1-on-1 coaching that fits your real life. Personalised training and nutrition, weekly check-ins, and a coach who actually replies.</p>
+<a href="#book" class="btn">Book your free intro call</a>
+<div class="stats">
+<div class="stat"><b>200+</b><span>clients coached</span></div>
+<div class="stat"><b>9 yrs</b><span>experience</span></div>
+<div class="stat"><b>4.9★</b><span>average rating</span></div>
+</div>
+</div></section>
+
+<section class="section" id="plans"><div class="wrap">
+<h2>Choose your program</h2>
+<p class="lead">Every plan starts with a free call to find your fit.</p>
+<div class="plans">
+<div class="plan"><h3>Kickstart</h3><div class="pr">€39<small>/mo</small></div><ul><li>Custom training plan</li><li>App-based workouts</li><li>Monthly check-in</li></ul><a href="#book" class="btn" style="width:100%;text-align:center;background:transparent;border:1px solid var(--acc);color:var(--acc)">Start</a></div>
+<div class="plan feat"><h3>Coached</h3><div class="pr">€89<small>/mo</small></div><ul><li>Everything in Kickstart</li><li>Nutrition coaching</li><li>Weekly video check-ins</li><li>Chat support all week</li></ul><a href="#book" class="btn" style="width:100%;text-align:center">Most popular</a></div>
+<div class="plan"><h3>1-on-1</h3><div class="pr">€59<small>/session</small></div><ul><li>In-person sessions</li><li>Hands-on technique</li><li>Fully tailored</li></ul><a href="#book" class="btn" style="width:100%;text-align:center;background:transparent;border:1px solid var(--acc);color:var(--acc)">Enquire</a></div>
+</div>
+</div></section>
+
+<section class="section" id="proof"><div class="wrap">
+<p class="quote">"I'd tried everything. Mara made it simple and I actually stuck with it — down 12kg and stronger than I've ever been."
+<span>— Joana R., coached 8 months</span></p>
+</div></section>
+
+<section class="section" id="book"><div class="wrap">
+<div class="cta">
+<h2>Ready to start?</h2>
+<p>Book a free 15-minute call. No pressure, just a plan.</p>
+<a href="#" class="btn">Book my free call</a>
+</div>
+</div></section>
+
+<footer>© Mara Fitness · A sample site by <a href="../index.html" style="color:var(--acc)">Launch48</a></footer>
+</body>
+</html>
