@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Caracas Grill — Venezuelan Flame-Grill in Leeds</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#fff8f1;--ink:#2a1c12;--mut:#7c6452;--acc:#d4521f;--card:#fff}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3,.brand{font-family:'Fraunces',serif}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:13px 26px;border-radius:8px;font-weight:600}
+.btn:hover{background:#b33f12}
+header{position:sticky;top:0;background:rgba(255,248,241,.9);backdrop-filter:blur(8px);border-bottom:1px solid #f0ddc9;z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{font-weight:900;font-size:1.4rem;color:var(--acc)}
+.links a{margin-left:24px;color:var(--mut);font-weight:500}.links a:hover{color:var(--acc)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:70px 0}
+.hero h1{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.04;font-weight:900;margin-bottom:18px}
+.hero p{color:var(--mut);font-size:1.15rem;margin-bottom:26px;max-width:440px}
+.heroimg{height:380px;border-radius:18px;background:linear-gradient(135deg,#f08a3c,#a8330f);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Fraunces';font-size:1.4rem;box-shadow:0 24px 60px rgba(168,51,15,.3)}
+.section{padding:62px 0}
+.section h2{font-size:clamp(1.8rem,4vw,2.6rem);text-align:center;margin-bottom:8px}
+.section .lead{text-align:center;color:var(--mut);margin-bottom:44px}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 48px;max-width:760px;margin:0 auto}
+.item{display:flex;justify-content:space-between;border-bottom:1px dashed #e6cdb4;padding:10px 0}
+.item .n{font-weight:600}.item .d{color:var(--mut);font-size:.9rem}.item .p{color:var(--acc);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid #f0ddc9;border-radius:16px;padding:28px;text-align:center}
+.card .ic{font-size:2rem;margin-bottom:10px}
+.visit{background:#2a1c12;color:#fff8f1;border-radius:20px;padding:50px;text-align:center}
+.visit h2{color:#fff}.visit p{color:#e0c9b3;margin:8px 0 22px}
+footer{text-align:center;color:var(--mut);padding:30px;font-size:.9rem}
+@media(max-width:780px){.hero{grid-template-columns:1fr}.menu,.cards{grid-template-columns:1fr}.links{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<div class="brand">Caracas Grill</div>
+<div class="links"><a href="#menu">Menu</a><a href="#why">Our story</a><a href="#visit">Find us</a></div>
+<a href="#visit" class="btn" style="padding:9px 18px">Order &amp; visit</a>
+</div></header>
+
+<div class="wrap"><section class="hero">
+<div>
+<h1>Venezuelan fire,<br>Leeds at heart.</h1>
+<p>Charcoal-grilled meats, hand-pressed arepas, and golden empanadas — proper Venezuelan street food, made fresh to order.</p>
+<a href="#menu" class="btn">See the menu</a>
+</div>
+<div class="heroimg">🔥 Flame-grilled to order</div>
+</section></div>
+
+<section class="section" id="menu"><div class="wrap">
+<h2>From the grill</h2>
+<p class="lead">Made fresh, served hot.</p>
+<div class="menu">
+<div class="item"><div><div class="n">Arepa Reina Pepiada</div><div class="d">Chicken, avocado, fresh herbs</div></div><div class="p">£7.5</div></div>
+<div class="item"><div><div class="n">Pabellón arepa</div><div class="d">Shredded beef, black beans, plantain</div></div><div class="p">£8</div></div>
+<div class="item"><div><div class="n">Beef empanadas</div><div class="d">Crispy, golden, two per portion</div></div><div class="p">£5.5</div></div>
+<div class="item"><div><div class="n">Parrilla mixed grill</div><div class="d">Charcoal meats, chimichurri</div></div><div class="p">£13</div></div>
+<div class="item"><div><div class="n">Tequeños</div><div class="d">Fried cheese sticks, house dip</div></div><div class="p">£5</div></div>
+<div class="item"><div><div class="n">Sweet plantain</div><div class="d">Caramelised, soft and sweet</div></div><div class="p">£3.5</div></div>
+</div>
+</div></section>
+
+<section class="section" id="why" style="background:#fbeede"><div class="wrap">
+<h2>Why people love it</h2>
+<p class="lead">A taste of Caracas, right here.</p>
+<div class="cards">
+<div class="card"><div class="ic">🔥</div><h3>Charcoal-grilled</h3><p>Real flame, real flavour — nothing pre-cooked.</p></div>
+<div class="card"><div class="ic">🫓</div><h3>Made to order</h3><p>Arepas pressed and filled fresh when you order.</p></div>
+<div class="card"><div class="ic">🇻🇪</div><h3>Authentic recipes</h3><p>Family recipes brought straight from Venezuela.</p></div>
+</div>
+</div></section>
+
+<section class="section" id="visit"><div class="wrap">
+<div class="visit">
+<h2>Come and eat</h2>
+<p>Dine in or takeaway · Open Tue–Sun</p>
+<a href="#" class="btn">Get directions</a>
+</div>
+</div></section>
+
+<footer>© Caracas Grill · Free preview site designed by <a href="../index.html" style="color:var(--acc)">Launch48</a></footer>
+</body>
+</html>

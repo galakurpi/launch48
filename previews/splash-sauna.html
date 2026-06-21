@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splash Sauna &amp; Spa — Relax in Liverpool</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#f3f7f6;--ink:#1b2b2a;--mut:#5f7472;--acc:#2e8b7f;--card:#fff}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
+.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+h1,h2,h3,.brand{font-family:'Cormorant Garamond',serif}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-block;background:var(--acc);color:#fff;padding:13px 26px;border-radius:8px;font-weight:600}
+.btn:hover{background:#236d63}
+header{position:sticky;top:0;background:rgba(243,247,246,.9);backdrop-filter:blur(8px);border-bottom:1px solid #dde9e7;z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.brand{font-weight:600;font-size:1.5rem;color:var(--acc)}
+.links a{margin-left:24px;color:var(--mut);font-weight:500}.links a:hover{color:var(--acc)}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:70px 0}
+.hero h1{font-size:clamp(2.6rem,5.5vw,4rem);line-height:1.02;font-weight:600;margin-bottom:18px}
+.hero p{color:var(--mut);font-size:1.15rem;margin-bottom:26px;max-width:440px}
+.heroimg{height:380px;border-radius:18px;background:linear-gradient(135deg,#4fb6a6,#1c5b53);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Cormorant Garamond';font-size:1.6rem;box-shadow:0 24px 60px rgba(46,139,127,.28)}
+.section{padding:62px 0}
+.section h2{font-size:clamp(2rem,4.5vw,3rem);text-align:center;margin-bottom:8px}
+.section .lead{text-align:center;color:var(--mut);margin-bottom:44px}
+.menu{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 48px;max-width:760px;margin:0 auto}
+.item{display:flex;justify-content:space-between;border-bottom:1px dashed #cfe0dd;padding:10px 0}
+.item .n{font-weight:600}.item .d{color:var(--mut);font-size:.9rem}.item .p{color:var(--acc);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid #dde9e7;border-radius:16px;padding:28px;text-align:center}
+.card .ic{font-size:2rem;margin-bottom:10px}
+.visit{background:#1b2b2a;color:#f3f7f6;border-radius:20px;padding:50px;text-align:center}
+.visit h2{color:#fff}.visit p{color:#bcd3cf;margin:8px 0 22px}
+footer{text-align:center;color:var(--mut);padding:30px;font-size:.9rem}
+@media(max-width:780px){.hero{grid-template-columns:1fr}.menu,.cards{grid-template-columns:1fr}.links{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<div class="brand">Splash Sauna &amp; Spa</div>
+<div class="links"><a href="#treatments">Treatments</a><a href="#why">Why us</a><a href="#visit">Book</a></div>
+<a href="#visit" class="btn" style="padding:9px 18px">Book a session</a>
+</div></header>
+
+<div class="wrap"><section class="hero">
+<div>
+<h1>Switch off.<br>Unwind. Restore.</h1>
+<p>A calm escape in the heart of Liverpool — sauna, steam, and spa treatments designed to melt the week away.</p>
+<a href="#treatments" class="btn">Explore treatments</a>
+</div>
+<div class="heroimg">🌿 Your moment of calm</div>
+</section></div>
+
+<section class="section" id="treatments"><div class="wrap">
+<h2>Treatments &amp; sessions</h2>
+<p class="lead">Time that's just for you.</p>
+<div class="menu">
+<div class="item"><div><div class="n">Finnish sauna session</div><div class="d">90 minutes of deep heat &amp; calm</div></div><div class="p">£22</div></div>
+<div class="item"><div><div class="n">Steam &amp; spa day</div><div class="d">Full access, robe &amp; towels included</div></div><div class="p">£45</div></div>
+<div class="item"><div><div class="n">Aromatherapy massage</div><div class="d">60 mins, tailored to you</div></div><div class="p">£55</div></div>
+<div class="item"><div><div class="n">Hot stone therapy</div><div class="d">Deep, warming muscle relief</div></div><div class="p">£60</div></div>
+<div class="item"><div><div class="n">Couples spa session</div><div class="d">Unwind together, private suite</div></div><div class="p">£90</div></div>
+<div class="item"><div><div class="n">Express reset</div><div class="d">45-min sauna &amp; cold plunge</div></div><div class="p">£18</div></div>
+</div>
+</div></section>
+
+<section class="section" id="why" style="background:#e8f1ef"><div class="wrap">
+<h2>Why Splash</h2>
+<p class="lead">Wellness, the way it should feel.</p>
+<div class="cards">
+<div class="card"><div class="ic">🧖</div><h3>Genuine relaxation</h3><p>Quiet, clean spaces designed to help you switch off.</p></div>
+<div class="card"><div class="ic">💆</div><h3>Skilled therapists</h3><p>Experienced, friendly, and focused on you.</p></div>
+<div class="card"><div class="ic">📍</div><h3>Central Liverpool</h3><p>An easy escape, right in the city.</p></div>
+</div>
+</div></section>
+
+<section class="section" id="visit"><div class="wrap">
+<div class="visit">
+<h2>Book your visit</h2>
+<p>Walk-ins welcome · Open 7 days</p>
+<a href="#" class="btn">Reserve a session</a>
+</div>
+</div></section>
+
+<footer>© Splash Sauna &amp; Spa · Free preview site designed by <a href="../index.html" style="color:var(--acc)">Launch48</a></footer>
+</body>
+</html>
