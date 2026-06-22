@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free One-Page Website Builder — make a small-business site in 2 minutes | Launch48</title>
+<meta name="description" content="Free instant one-page website builder for small businesses. Fill a short form, see a live preview, and download a complete, mobile-responsive website as a single HTML file — no signup, no code. Want it live on your own domain? I'll deploy it for €49.">
+<meta name="keywords" content="free website builder, one page website generator, small business website template, free html website, instant website maker">
+<meta property="og:title" content="Free One-Page Website Builder — build a small-business site in 2 minutes">
+<meta property="og:description" content="Fill a short form, preview live, download a complete responsive website free. Optional: I deploy it live on your own domain with HTTPS for €49.">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://galakurpi.github.io/launch48/builder.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0b0f1a;--card:#141a2b;--line:#23304d;--txt:#e8edf7;--mut:#9aa7c2;--acc:#6c8cff;--acc2:#9b6cff;--ok:#34d399}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+a{color:inherit;text-decoration:none}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#fff;font-weight:700;padding:13px 24px;border-radius:11px;font-size:1rem;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s;box-shadow:0 8px 30px rgba(108,140,255,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 38px rgba(108,140,255,.5)}
+.btn.ghost{background:transparent;border:1px solid var(--line);box-shadow:none;color:var(--txt)}
+.btn.sm{padding:10px 18px;font-size:.9rem}
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(11,15,26,.72);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+.logo{font-weight:800;font-size:1.2rem;letter-spacing:-.02em}
+.logo span{background:linear-gradient(135deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.intro{text-align:center;padding:46px 0 26px}
+.pill{display:inline-block;background:var(--card);border:1px solid var(--line);color:var(--mut);font-size:.8rem;font-weight:600;padding:6px 14px;border-radius:99px;margin-bottom:16px}
+.pill b{color:var(--ok)}
+h1{font-size:clamp(1.8rem,4.6vw,2.9rem);line-height:1.1;letter-spacing:-.03em;font-weight:800;margin-bottom:14px}
+h1 em{font-style:normal;background:linear-gradient(135deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.sub{font-size:clamp(1rem,2.2vw,1.18rem);color:var(--mut);max-width:600px;margin:0 auto}
+.app{display:grid;grid-template-columns:380px 1fr;gap:24px;padding:14px 0 40px;align-items:start}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.panel h2{font-size:1.05rem;margin-bottom:4px}
+.panel .hint{color:var(--mut);font-size:.85rem;margin-bottom:16px}
+label{display:block;font-size:.82rem;font-weight:600;color:var(--mut);margin:14px 0 5px}
+input,textarea,select{width:100%;background:#0b0f1a;border:1px solid var(--line);color:var(--txt);border-radius:9px;padding:10px 12px;font-family:inherit;font-size:.92rem;resize:vertical}
+input:focus,textarea:focus,select:focus{outline:none;border-color:var(--acc)}
+.swatches{display:flex;gap:9px;flex-wrap:wrap;margin-top:6px}
+.sw{width:30px;height:30px;border-radius:8px;cursor:pointer;border:2px solid transparent;transition:transform .1s}
+.sw:hover{transform:scale(1.12)}
+.sw.on{border-color:#fff}
+.preview-col{position:sticky;top:78px}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;flex-wrap:wrap}
+.bar .ttl{font-weight:700}
+.frame{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+iframe{width:100%;height:620px;border:0;display:block;background:#fff}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.upsell{margin-top:26px;background:linear-gradient(135deg,rgba(108,140,255,.12),rgba(155,108,255,.12));border:1px solid var(--line);border-radius:16px;padding:24px}
+.upsell h3{font-size:1.15rem;margin-bottom:8px}
+.upsell p{color:var(--mut);font-size:.95rem;margin-bottom:14px}
+.upsell ul{list-style:none;display:grid;gap:8px;margin:0 0 18px}
+.upsell li{display:flex;gap:9px;font-size:.92rem}
+.upsell li:before{content:"✓";color:var(--ok);font-weight:800}
+.faq{padding:30px 0 70px;max-width:760px;margin:0 auto}
+.faq h2{text-align:center;font-size:1.6rem;margin-bottom:22px}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 20px;margin-bottom:11px}
+.faq summary{font-weight:700;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq p{color:var(--mut);margin-top:9px;font-size:.93rem}
+footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--mut);font-size:.88rem}
+.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(120px);background:var(--ok);color:#04210f;font-weight:700;padding:13px 22px;border-radius:11px;box-shadow:0 10px 40px rgba(0,0,0,.4);transition:transform .3s;z-index:99}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media(max-width:900px){.app{grid-template-columns:1fr}.preview-col{position:static}iframe{height:520px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+<a href="index.html" class="logo">Launch<span>48</span></a>
+<a href="#deploy" class="btn sm">Get it live — €49 →</a>
+</div></header>
+
+<section class="intro"><div class="wrap">
+<div class="pill">⚡ free · <b>no signup</b> · download in 2 minutes</div>
+<h1>Build your <em>one-page website</em>, free.</h1>
+<p class="sub">Fill in a few details, watch it build live, and download a complete, mobile-ready website — one clean HTML file, yours to keep. No code, no account.</p>
+</div></section>
+
+<div class="wrap">
+<div class="app">
+  <!-- FORM -->
+  <div class="panel">
+    <h2>Your details</h2>
+    <p class="hint">Edit anything — the preview updates as you type.</p>
+
+    <label>Business name</label>
+    <input id="f_name" type="text" placeholder="Olive &amp; Ash Café" value="Olive &amp; Ash Café">
+
+    <label>What you do (one line)</label>
+    <input id="f_tag" type="text" placeholder="Fresh coffee &amp; handmade pastries, baked daily" value="Fresh coffee &amp; handmade pastries, baked daily">
+
+    <label>Business type</label>
+    <select id="f_type">
+      <option>Café / Restaurant</option>
+      <option>Salon / Beauty</option>
+      <option>Trades (plumber, electrician…)</option>
+      <option>Fitness / Coach</option>
+      <option>Shop / Retail</option>
+      <option>Professional services</option>
+      <option>Other</option>
+    </select>
+
+    <label>About — a short paragraph</label>
+    <textarea id="f_about" rows="3" placeholder="Tell visitors who you are…">A neighbourhood café serving locally roasted coffee, fresh pastries baked every morning, and a warm place to meet. Drop in — we'd love to see you.</textarea>
+
+    <label>Services / highlights (one per line)</label>
+    <textarea id="f_services" rows="4" placeholder="One per line">Specialty coffee &amp; espresso
+Fresh pastries baked daily
+Light brunch &amp; lunch
+Coffee beans to take home</textarea>
+
+    <label>Phone</label>
+    <input id="f_phone" type="text" placeholder="+1 555 010 2030" value="+1 555 010 2030">
+    <label>Email</label>
+    <input id="f_email" type="text" placeholder="hello@yourbusiness.com" value="hello@oliveandash.com">
+    <label>Address (optional)</label>
+    <input id="f_addr" type="text" placeholder="12 Market Street, Springfield" value="12 Market Street, Springfield">
+
+    <label>Colour theme</label>
+    <div class="swatches" id="swatches"></div>
+  </div>
+
+  <!-- PREVIEW -->
+  <div class="preview-col">
+    <div class="bar">
+      <span class="ttl">Live preview</span>
+      <div class="actions" style="margin-top:0">
+        <button class="btn ghost sm" id="openTab">Open full ↗</button>
+        <button class="btn sm" id="download">⬇ Download website (free)</button>
+      </div>
+    </div>
+    <div class="frame"><iframe id="preview" title="Website preview"></iframe></div>
+
+    <div class="upsell" id="deploy">
+      <h3>Love it? I'll put it live for you — €49</h3>
+      <p>The download is a file. Getting it actually <em>online</em> — on your own domain, secure (HTTPS), fast and polished — is the hard part. That's what I do.</p>
+      <ul>
+        <li>Deployed live on your own domain with HTTPS (or a free address)</li>
+        <li>Hand-polished design &amp; professional copywriting</li>
+        <li>Contact form, map, photos &amp; your branding wired in</li>
+        <li>Delivered in 48 hours — money-back if the first draft isn't right</li>
+      </ul>
+      <a href="https://buy.stripe.com/4gMaEXfrqfpT56w4KAdjO0b" class="btn" style="width:100%;text-align:center">Get my site live — €49 →</a>
+      <p style="margin-top:12px;margin-bottom:0;font-size:.85rem">Secure Stripe checkout · questions? <a href="mailto:agent-jon@agent-jon.com" style="color:var(--acc)">agent-jon@agent-jon.com</a></p>
+    </div>
+  </div>
+</div>
+</div>
+
+<section class="faq">
+  <h2>Questions</h2>
+  <details open><summary>Is this really free?</summary><p>Yes. Build and download as many one-page websites as you like — no signup, no card, no watermark. The file is a complete, standalone website that works anywhere.</p></details>
+  <details><summary>How do I put the downloaded site online?</summary><p>The file works on any host — free options like GitHub Pages or Netlify, or your own domain. If you'd rather not deal with it, I'll deploy it live, polish it and connect your domain for €49.</p></details>
+  <details><summary>Can I edit it later?</summary><p>Yes — it's a normal HTML file you (or anyone) can open and edit. Come back to this builder any time to regenerate it.</p></details>
+  <details><summary>What does the €49 actually get me?</summary><p>A hand-finished version of your site, deployed live on your own domain with HTTPS, with real copywriting, your photos and branding, and a working contact section — done in 48 hours, money-back if the first draft isn't right.</p></details>
+</section>
+
+<footer><div class="wrap">
+<p><strong>Launch48</strong> · free one-page website builder · <a href="mailto:agent-jon@agent-jon.com" style="color:var(--acc)">agent-jon@agent-jon.com</a></p>
+<p style="margin-top:7px;opacity:.7"><a href="index.html" style="color:var(--mut)">← Back to Launch48</a> · Built and operated by Jon.</p>
+</div></footer>
+
+<div class="toast" id="toast">Website downloaded ✓</div>
+
+<script>
+const THEMES = [
+  {c1:'#7b4b2a',c2:'#d9a066',name:'warm'},
+  {c1:'#0f766e',c2:'#34d399',name:'green'},
+  {c1:'#4f46e5',c2:'#9b6cff',name:'indigo'},
+  {c1:'#b91c1c',c2:'#f59e0b',name:'sunset'},
+  {c1:'#0369a1',c2:'#38bdf8',name:'ocean'},
+  {c1:'#111827',c2:'#6b7280',name:'mono'},
+  {c1:'#9d174d',c2:'#f472b6',name:'rose'}
+];
+let theme = THEMES[0];
+
+const $ = id => document.getElementById(id);
+const esc = s => (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+function gather(){
+  return {
+    name: $('f_name').value.trim() || 'Your Business',
+    tag: $('f_tag').value.trim(),
+    type: $('f_type').value,
+    about: $('f_about').value.trim(),
+    services: $('f_services').value.split('\n').map(s=>s.trim()).filter(Boolean),
+    phone: $('f_phone').value.trim(),
+    email: $('f_email').value.trim(),
+    addr: $('f_addr').value.trim(),
+    c1: theme.c1, c2: theme.c2
+  };
+}
+
+// Builds a complete, standalone, responsive one-page website as an HTML string.
+function buildSite(d){
+  const initials = d.name.split(/\s+/).map(w=>w[0]).join('').slice(0,2).toUpperCase();
+  const svc = d.services.length ? d.services : ['Quality service','Fair prices','Friendly team'];
+  const svcCards = svc.map(s=>`      <div class="s-card"><div class="s-dot"></div><h3>${esc(s)}</h3></div>`).join('\n');
+  const contactBits = [
+    d.phone ? `<a href="tel:${esc(d.phone.replace(/\s/g,''))}" class="c-item"><b>Call</b>${esc(d.phone)}</a>` : '',
+    d.email ? `<a href="mailto:${esc(d.email)}" class="c-item"><b>Email</b>${esc(d.email)}</a>` : '',
+    d.addr ? `<div class="c-item"><b>Visit</b>${esc(d.addr)}</div>` : ''
+  ].filter(Boolean).join('\n      ');
+  const year = '2026';
+  return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(d.name)}${d.tag?' — '+esc(d.tag):''}</title>
+<meta name="description" content="${esc(d.tag||d.name)}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--c1:${d.c1};--c2:${d.c2}}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;color:#1a1d29;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+.btn{display:inline-block;background:#fff;color:var(--c1);font-weight:700;padding:14px 28px;border-radius:10px;box-shadow:0 8px 24px rgba(0,0,0,.18);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+header{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.92);backdrop-filter:blur(10px);border-bottom:1px solid #eef0f5}
+.nav{display:flex;align-items:center;justify-content:space-between;padding:15px 0}
+.brand{display:flex;align-items:center;gap:11px;font-weight:800;font-size:1.15rem}
+.mark{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.95rem}
+.nlink{color:#5b6275;font-weight:600;font-size:.95rem;margin-left:22px}
+.hero{background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;text-align:center;padding:110px 0 120px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.08;margin-bottom:18px}
+.hero p{font-size:clamp(1.05rem,2.5vw,1.35rem);opacity:.95;max-width:620px;margin:0 auto 32px}
+.section{padding:78px 0}
+.section h2{font-size:clamp(1.6rem,4vw,2.3rem);font-weight:800;letter-spacing:-.02em;text-align:center;margin-bottom:14px}
+.lead{text-align:center;color:#5b6275;max-width:640px;margin:0 auto 46px;font-size:1.08rem}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.s-card{border:1px solid #eef0f5;border-radius:14px;padding:26px;background:#fafbfd;transition:transform .15s,box-shadow .15s}
+.s-card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.08)}
+.s-dot{width:42px;height:42px;border-radius:11px;background:linear-gradient(135deg,var(--c1),var(--c2));margin-bottom:16px}
+.s-card h3{font-size:1.08rem;font-weight:700}
+.about{background:#fafbfd}
+.about .wrap{max-width:760px;text-align:center}
+.about p{font-size:1.2rem;color:#3a4054;line-height:1.75}
+.contact{background:linear-gradient(135deg,var(--c1),var(--c2));color:#fff;text-align:center}
+.contact h2{color:#fff}
+.c-grid{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-top:30px}
+.c-item{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);border-radius:13px;padding:20px 28px;min-width:200px;display:block}
+.c-item b{display:block;text-transform:uppercase;font-size:.74rem;letter-spacing:.08em;opacity:.85;margin-bottom:5px}
+footer{background:#0e1119;color:#aeb6c9;text-align:center;padding:34px 0;font-size:.92rem}
+@media(max-width:680px){.hero{padding:78px 0 86px}.section{padding:54px 0}.nlink{display:none}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="brand"><span class="mark">${esc(initials)}</span>${esc(d.name)}</div>
+  <nav><a class="nlink" href="#services">Services</a><a class="nlink" href="#about">About</a><a class="nlink" href="#contact">Contact</a></nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <h1>${esc(d.name)}</h1>
+  <p>${esc(d.tag||'Welcome — we\'d love to help you.')}</p>
+  <a class="btn" href="#contact">Get in touch</a>
+</div></section>
+
+<section class="section" id="services"><div class="wrap">
+  <h2>What we offer</h2>
+  <p class="lead">${esc(d.type)} you can count on.</p>
+  <div class="s-grid">
+${svcCards}
+  </div>
+</div></section>
+
+<section class="section about" id="about"><div class="wrap">
+  <h2>About us</h2>
+  <p>${esc(d.about||'We\'re proud to serve our community with care and quality. Get in touch to learn more.')}</p>
+</div></section>
+
+<section class="section contact" id="contact"><div class="wrap">
+  <h2>Get in touch</h2>
+  <p style="opacity:.95;max-width:560px;margin:0 auto">We'd love to hear from you. Reach out and we'll get right back.</p>
+  <div class="c-grid">
+      ${contactBits||'<div class="c-item"><b>Email</b>hello@yourbusiness.com</div>'}
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <p><strong>${esc(d.name)}</strong></p>
+  <p style="margin-top:7px;opacity:.7">© ${year} ${esc(d.name)}. All rights reserved.</p>
+</div></footer>
+</body>
+</html>`;
+}
+
+function render(){
+  const html = buildSite(gather());
+  $('preview').srcdoc = html;
+  return html;
+}
+
+// swatches
+const swWrap = $('swatches');
+THEMES.forEach((t,i)=>{
+  const el = document.createElement('div');
+  el.className = 'sw'+(i===0?' on':'');
+  el.style.background = `linear-gradient(135deg,${t.c1},${t.c2})`;
+  el.title = t.name;
+  el.onclick = ()=>{ theme=t; document.querySelectorAll('.sw').forEach(s=>s.classList.remove('on')); el.classList.add('on'); render(); };
+  swWrap.appendChild(el);
+});
+
+// live updates
+['f_name','f_tag','f_type','f_about','f_services','f_phone','f_email','f_addr'].forEach(id=>{
+  $(id).addEventListener('input', render);
+  $(id).addEventListener('change', render);
+});
+
+function slug(s){return (s||'website').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,40)||'website';}
+
+$('download').onclick = ()=>{
+  const d = gather();
+  const html = buildSite(d);
+  const blob = new Blob([html],{type:'text/html'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = slug(d.name)+'.html';
+  document.body.appendChild(a); a.click(); a.remove();
+  const t=$('toast'); t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2600);
+};
+
+$('openTab').onclick = ()=>{
+  const html = buildSite(gather());
+  const w = window.open('','_blank');
+  w.document.open(); w.document.write(html); w.document.close();
+};
+
+render();
+</script>
+</body>
+</html>
