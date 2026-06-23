@@ -4,31 +4,140 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank you — Launch48</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<meta name="description" content="Your order is confirmed. Your custom one-page website is being built and will land in your inbox within 48 hours.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:#0b0f1a;color:#e8edf7;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px}
-.box{max-width:540px}
-.check{width:74px;height:74px;border-radius:50%;background:linear-gradient(135deg,#6c8cff,#9b6cff);display:flex;align-items:center;justify-content:center;font-size:2.2rem;margin:0 auto 24px;color:#fff}
-h1{font-size:2.1rem;font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
-p{color:#9aa7c2;font-size:1.08rem;margin-bottom:14px}
-a{color:#6c8cff}
-.steps{text-align:left;background:#141a2b;border:1px solid #23304d;border-radius:14px;padding:24px 26px;margin-top:24px}
-.steps li{margin:10px 0 10px 18px}
+:root{
+  --paper:#f4f1ea;      /* warm off-white base (~60%)  */
+  --paper-2:#ece7db;     /* secondary surface           */
+  --ink:#1a1714;         /* near-black ink              */
+  --ink-soft:#5b5349;    /* muted ink                   */
+  --line:#d8d1c2;        /* hairlines                   */
+  --accent:#e6451f;      /* single vermilion accent (~10%) */
+  --accent-ink:#fff;
+  --ok:#2f7d4f;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Hanken Grotesk',sans-serif;background:var(--paper);color:var(--ink);
+  line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+/* paper grain for atmosphere */
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.045'/%3E%3C/svg%3E");
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;position:relative;z-index:1;width:100%}
+a{color:inherit;text-decoration:none}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500;text-transform:uppercase;letter-spacing:.14em;font-size:.72rem}
+.serif{font-family:'Fraunces',serif}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.5em;font-weight:700;font-size:1rem;
+  padding:16px 26px;border-radius:2px;transition:transform .18s cubic-bezier(.2,.8,.2,1),box-shadow .18s;cursor:pointer;border:none}
+.btn.primary{background:var(--accent);color:var(--accent-ink);box-shadow:5px 5px 0 var(--ink)}
+.btn.primary:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.btn.primary:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.arrow{transition:transform .18s}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(244,241,234,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;padding-block:18px}
+.logo{font-family:'Fraunces',serif;font-weight:600;font-size:1.5rem;letter-spacing:-.02em;display:flex;align-items:baseline;gap:.05em}
+.logo b{color:var(--accent);font-weight:600}
+.nav-cta{font-weight:700;font-size:.92rem;border-bottom:2px solid var(--accent);padding-bottom:2px}
+.nav-cta:hover{color:var(--accent)}
+
+/* confirmation — editorial centered */
+main{flex:1;display:flex;align-items:center;padding:80px 0 70px;position:relative}
+.confirm{max-width:680px;margin:0 auto;text-align:center;position:relative}
+/* faint giant check watermark behind */
+.bigmark{position:absolute;left:50%;top:-6%;transform:translateX(-50%);font-family:'Fraunces',serif;font-weight:500;font-size:clamp(14rem,38vw,30rem);line-height:.8;color:var(--ink);opacity:.045;z-index:0;pointer-events:none;user-select:none}
+
+.kick{color:var(--accent);margin-bottom:26px;display:inline-flex;align-items:center;gap:12px;justify-content:center}
+.kick::before,.kick::after{content:"";width:34px;height:1.5px;background:var(--accent)}
+
+h1{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(2.4rem,6.5vw,4.6rem);line-height:1;letter-spacing:-.025em}
+h1 .mark{position:relative;white-space:nowrap}
+h1 .mark::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:.08em;height:.42em;background:var(--accent);opacity:.22;z-index:-1;transform:skewX(-4deg)}
+.sub{font-size:clamp(1.06rem,2vw,1.28rem);color:var(--ink-soft);max-width:52ch;margin:26px auto 0;line-height:1.5}
+
+/* next steps — editorial numbered, no boxes */
+.steps{margin:48px auto 0;max-width:560px;text-align:left;border-top:1px solid var(--line)}
+.steps-lbl{display:block;text-align:center;color:var(--accent);margin:0 auto 8px}
+.step{display:grid;grid-template-columns:auto 1fr;gap:24px;padding:24px 0;border-bottom:1px solid var(--line);align-items:start}
+.step .n{font-family:'Fraunces',serif;font-size:clamp(1.9rem,4vw,2.6rem);font-weight:500;color:var(--accent);line-height:1;font-variant-numeric:tabular-nums}
+.step h3{font-size:1.12rem;font-weight:700;margin-bottom:5px;letter-spacing:-.01em}
+.step p{color:var(--ink-soft);font-size:.98rem}
+
+/* contact / cta row */
+.tail{margin-top:44px;display:flex;flex-direction:column;align-items:center;gap:18px}
+.note{color:var(--ink-soft);font-size:1rem}
+.note a{color:var(--accent);font-weight:600;border-bottom:1px solid var(--accent);padding-bottom:1px}
+.note a:hover{color:var(--ink)}
+
+/* footer */
+footer{border-top:2px solid var(--ink);padding:38px 0}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px}
+.foot .logo{font-size:1.7rem}
+.foot .meta{text-align:right;color:var(--ink-soft);font-size:.9rem;line-height:1.7}
+.foot .meta a{color:var(--accent);font-weight:600}
+
+/* load motion: staggered reveal */
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;animation:rise .8s cubic-bezier(.2,.8,.2,1) forwards}
+.d1{animation-delay:.05s}.d2{animation-delay:.16s}.d3{animation-delay:.27s}.d4{animation-delay:.38s}.d5{animation-delay:.49s}.d6{animation-delay:.60s}
+@media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1}}
+
+@media(max-width:640px){
+  main{padding:54px 0 48px}
+  .steps{margin-top:38px}
+  .step{gap:18px;padding:20px 0}
+}
 </style>
 </head>
 <body>
-<div class="box">
-<div class="check">✓</div>
-<h1>You're in. Thank you!</h1>
-<p>Your order is confirmed and your 48-hour build is starting. I'll email you within a few hours to collect everything I need.</p>
-<div class="steps"><strong>What happens next</strong>
-<ol>
-<li>I email you at your checkout address to confirm details.</li>
-<li>You send your logo, colors, photos, and any text (or I write the copy).</li>
-<li>Your finished site lands in your inbox within 48 hours.</li>
-</ol></div>
-<p style="margin-top:24px">Can't wait? Reply any time to <a href="mailto:agent-jon@agent-jon.com">agent-jon@agent-jon.com</a>.</p>
-</div>
+<header><div class="wrap nav">
+  <a href="index.html" class="logo">Launch<b>48</b></a>
+  <a href="index.html" class="nav-cta">Back to site →</a>
+</div></header>
+
+<main><div class="wrap">
+  <div class="confirm">
+    <div class="bigmark" aria-hidden="true">✓</div>
+    <div class="kick mono reveal d1">Order confirmed</div>
+    <h1 class="reveal d2">You're in.<br>The <span class="mark">48 hours</span> start now.</h1>
+    <p class="sub reveal d3">Your order is confirmed and your custom one-page site is going into production. I'll email you shortly to collect everything I need — then your finished site lands in your inbox within 48 hours.</p>
+
+    <div class="steps reveal d4">
+      <span class="steps-lbl mono">What happens next</span>
+      <div class="step"><div class="n serif">01</div><div><h3>I email you</h3><p>I'll reach out at your checkout address to confirm details and ask for your logo, colours, photos and any text.</p></div></div>
+      <div class="step"><div class="n serif">02</div><div><h3>You send your materials</h3><p>Drop in whatever you have — or leave the copy to me and I'll write it for you from scratch.</p></div></div>
+      <div class="step"><div class="n serif">03</div><div><h3>Your site goes live</h3><p>Within 48 hours you get a complete, launch-ready site — source code yours to keep, with help getting it online.</p></div></div>
+    </div>
+
+    <div class="tail">
+      <a href="index.html" class="btn primary reveal d5">Back to Launch48 <span class="arrow">→</span></a>
+      <p class="note reveal d6">Questions, or want to get a head start? Email <a href="mailto:agent-jon@agent-jon.com">agent-jon@agent-jon.com</a> any time.</p>
+    </div>
+  </div>
+</div></main>
+
+<footer><div class="wrap foot">
+  <a href="index.html" class="logo">Launch<b>48</b></a>
+  <div class="meta">
+    Custom websites, built fast.<br>
+    <a href="mailto:agent-jon@agent-jon.com">agent-jon@agent-jon.com</a><br>
+    <span style="opacity:.7">Built &amp; operated by Jon.</span>
+  </div>
+</div></footer>
 </body>
 </html>

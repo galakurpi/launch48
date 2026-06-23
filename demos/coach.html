@@ -1,88 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mara Fitness — Personal Training</title>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mara Fitness — Personal Training in Lisbon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a1413;--card:#0f1f1d;--line:#1d3a36;--ink:#eafaf6;--mut:#86b3ab;--acc:#34d399}
+:root{
+  --bg:#f4efe7;        /* warm off-white */
+  --ink:#1c1916;       /* near-black warm */
+  --mut:#6c645a;       /* muted brown-grey */
+  --line:#d8cfc1;      /* hairline */
+  --surface:#ebe3d6;   /* secondary surface */
+  --acc:#e8501e;       /* molten orange — the only accent */
+  --acc-deep:#c33f12;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
-.wrap{max-width:1060px;margin:0 auto;padding:0 22px}
+body{
+  font-family:'Archivo',sans-serif;background:var(--bg);color:var(--ink);
+  line-height:1.6;-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(var(--line) 0.6px,transparent 0.6px);
+  background-size:26px 26px;
+}
 a{color:inherit;text-decoration:none}
-.btn{display:inline-block;background:var(--acc);color:#062018;padding:14px 28px;border-radius:10px;font-weight:700}
-.btn:hover{filter:brightness(1.1)}
-header{position:sticky;top:0;background:rgba(10,20,19,.82);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:17px 0}
-.brand{font-weight:800;font-size:1.3rem}.brand span{color:var(--acc)}
-.links a{margin-left:22px;color:var(--mut);font-weight:600}.links a:hover{color:var(--acc)}
-.hero{text-align:center;padding:84px 0 60px}
-.tag{display:inline-block;border:1px solid var(--line);color:var(--acc);padding:6px 14px;border-radius:99px;font-size:.82rem;font-weight:600;margin-bottom:22px}
-.hero h1{font-size:clamp(2.3rem,5.5vw,4rem);font-weight:800;line-height:1.05;letter-spacing:-.02em;margin-bottom:18px}
-.hero p{color:var(--mut);font-size:1.18rem;max-width:540px;margin:0 auto 28px}
-.stats{display:flex;gap:46px;justify-content:center;margin-top:46px;flex-wrap:wrap}
-.stat b{display:block;font-size:2.2rem;color:var(--acc);font-weight:800}.stat span{color:var(--mut);font-size:.9rem}
-.section{padding:60px 0}
-.section h2{font-size:clamp(1.7rem,4vw,2.5rem);text-align:center;margin-bottom:8px;font-weight:800}
-.section .lead{text-align:center;color:var(--mut);margin-bottom:42px}
-.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.plan{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px}
-.plan.feat{border-color:var(--acc);box-shadow:0 16px 50px rgba(52,211,153,.16)}
-.plan h3{font-size:1.2rem;margin-bottom:6px}
-.plan .pr{font-size:2.2rem;font-weight:800;margin:8px 0 2px}.plan .pr small{font-size:.9rem;color:var(--mut);font-weight:500}
-.plan ul{list-style:none;margin:18px 0}.plan li{color:var(--mut);padding:7px 0;border-bottom:1px solid var(--line)}.plan li:before{content:"✓ ";color:var(--acc)}
-.quote{max-width:680px;margin:0 auto;text-align:center;font-size:1.3rem;font-style:italic;color:var(--ink)}
-.quote span{display:block;margin-top:16px;color:var(--mut);font-size:.95rem;font-style:normal}
-.cta{background:linear-gradient(135deg,#0f766e,#34d399);border-radius:22px;padding:54px;text-align:center;color:#062018}
-.cta h2{color:#062018}.cta p{margin:8px 0 22px;color:#0a3a30}
-.cta .btn{background:#062018;color:#eafaf6}
-footer{text-align:center;color:var(--mut);padding:30px;font-size:.9rem}
-@media(max-width:780px){.plans{grid-template-columns:1fr}.links{display:none}}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+.display{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:.92}
+.eyebrow{font-size:.74rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--acc)}
+
+/* primary CTA */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;background:var(--acc);color:var(--bg);
+  padding:16px 30px;font-weight:700;font-size:.95rem;letter-spacing:.02em;
+  text-transform:uppercase;border-radius:2px;transition:transform .15s ease,background .15s ease;
+}
+.btn:hover{background:var(--acc-deep);transform:translateY(-2px)}
+.btn .arr{transition:transform .2s ease}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(244,239,231,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-block:18px}
+.brand{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.5rem;letter-spacing:.02em}
+.brand i{font-style:normal;color:var(--acc)}
+.links{display:flex;gap:30px;align-items:center}
+.links a{font-weight:600;font-size:.92rem;color:var(--mut);transition:color .15s}
+.links a:hover{color:var(--ink)}
+.nav .btn{padding:11px 20px;font-size:.82rem}
+
+/* hero */
+.hero{padding:90px 0 70px;position:relative;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:1.15fr .85fr;gap:50px;align-items:center}
+.hero h1{font-size:clamp(3.4rem,9vw,7rem);margin:18px 0 0}
+.hero h1 .o{color:var(--acc)}
+.hero .sub{color:var(--mut);font-size:1.18rem;max-width:30ch;margin:26px 0 32px}
+.hero .actions{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.hero .note{font-size:.88rem;color:var(--mut);font-weight:500}
+.frame{position:relative;aspect-ratio:4/5;border:2px solid var(--ink);background:var(--surface);
+  display:flex;flex-direction:column;justify-content:flex-end;padding:30px;overflow:hidden}
+.frame::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(135deg,transparent 0 22px,rgba(232,80,30,.06) 22px 23px)}
+.frame .big{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:clamp(2rem,5vw,3.4rem);line-height:.9;position:relative}
+.frame .big span{color:var(--acc)}
+.frame .cap{position:relative;color:var(--mut);font-size:.9rem;margin-top:14px;font-weight:600}
+.frame .badge{position:absolute;top:24px;right:-2px;background:var(--acc);color:var(--bg);
+  font-weight:700;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px}
+
+/* stats strip */
+.strip{border-block:1px solid var(--line);background:var(--surface)}
+.strip .row{display:flex;gap:0;flex-wrap:wrap}
+.stat{flex:1;min-width:160px;padding:30px 24px;border-right:1px solid var(--line)}
+.stat:last-child{border-right:0}
+.stat b{font-family:'Anton',sans-serif;font-size:2.6rem;display:block;line-height:1}
+.stat span{color:var(--mut);font-size:.86rem;font-weight:600;letter-spacing:.04em}
+
+/* section shell */
+.section{padding:88px 0}
+.section .head{max-width:620px;margin-bottom:48px}
+.section h2{font-size:clamp(2.4rem,6vw,4rem);margin:14px 0 0}
+.section .lead{color:var(--mut);font-size:1.12rem;margin-top:16px}
+
+/* programs — not card soup: a structured table-like list */
+.programs{border-top:2px solid var(--ink)}
+.prog{display:grid;grid-template-columns:auto 1fr auto auto;gap:30px;align-items:center;
+  padding:30px 4px;border-bottom:1px solid var(--line);transition:padding-left .2s ease,background .2s ease}
+.prog:hover{padding-left:18px;background:linear-gradient(90deg,rgba(232,80,30,.05),transparent)}
+.prog .idx{font-family:'Anton',sans-serif;font-size:1.4rem;color:var(--acc);width:46px}
+.prog .name{display:flex;flex-direction:column;gap:6px}
+.prog .name h3{font-family:'Anton',sans-serif;text-transform:uppercase;font-size:1.6rem;font-weight:400;letter-spacing:.01em}
+.prog .name p{color:var(--mut);font-size:.96rem;max-width:46ch}
+.prog .name .feat-tag{align-self:flex-start;background:var(--ink);color:var(--bg);font-size:.66rem;
+  font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:4px 10px;margin-bottom:2px}
+.prog .price{font-family:'Anton',sans-serif;font-size:2rem;white-space:nowrap}
+.prog .price small{font-family:'Archivo';font-size:.78rem;color:var(--mut);font-weight:600}
+.prog .go{font-weight:700;text-transform:uppercase;font-size:.82rem;letter-spacing:.08em;color:var(--acc);white-space:nowrap}
+.prog .go .arr{transition:transform .2s}
+.prog:hover .go .arr{transform:translateX(4px)}
+
+/* quote */
+.proof{background:var(--ink);color:var(--bg);position:relative;overflow:hidden}
+.proof .mark{font-family:'Anton',sans-serif;position:absolute;top:-40px;left:20px;font-size:18rem;color:rgba(232,80,30,.18);line-height:1;pointer-events:none}
+.proof .q{max-width:780px;position:relative}
+.proof .q p{font-family:'Anton',sans-serif;text-transform:uppercase;font-weight:400;font-size:clamp(1.8rem,4.4vw,3rem);line-height:1.04;letter-spacing:.005em}
+.proof .q p em{font-style:normal;color:var(--acc)}
+.proof .q .by{font-family:'Archivo';margin-top:28px;color:#bcae9c;font-size:1rem;font-weight:600;letter-spacing:.02em}
+
+/* CTA */
+.book{padding:96px 0}
+.book .panel{border:2px solid var(--ink);padding:clamp(36px,6vw,72px);text-align:center;position:relative;background:var(--surface)}
+.book .panel::after{content:"";position:absolute;left:14px;top:14px;right:-14px;bottom:-14px;border:2px solid var(--acc);z-index:-1}
+.book h2{font-size:clamp(2.6rem,7vw,5rem);margin-bottom:16px}
+.book p{color:var(--mut);font-size:1.15rem;max-width:42ch;margin:0 auto 34px}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:40px 0}
+footer .row{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--mut);font-size:.9rem;font-weight:500}
+footer a{color:var(--acc);font-weight:700}
+footer .hours{display:flex;gap:24px;flex-wrap:wrap}
+
+/* reveal motion */
+.reveal{opacity:0;transform:translateY(26px);animation:rise .8s cubic-bezier(.16,.84,.44,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
+@media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+
+@media(max-width:880px){
+  .hero .grid{grid-template-columns:1fr;gap:38px}
+  .frame{aspect-ratio:16/11}
+  .links{display:none}
+  .prog{grid-template-columns:auto 1fr;gap:16px 18px}
+  .prog .price{grid-column:2;justify-self:start}
+  .prog .go{grid-column:2;justify-self:start}
+  .proof .mark{font-size:11rem}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<div class="brand">Mara<span>Fitness</span></div>
-<div class="links"><a href="#plans">Programs</a><a href="#proof">Results</a><a href="#book">Book</a></div>
-<a href="#book" class="btn" style="padding:9px 18px">Free intro call</a>
-</div></header>
 
-<section class="hero"><div class="wrap">
-<span class="tag">Online &amp; in-person · Lisbon</span>
-<h1>Get strong.<br>Stay consistent.</h1>
-<p>1-on-1 coaching that fits your real life. Personalised training and nutrition, weekly check-ins, and a coach who actually replies.</p>
-<a href="#book" class="btn">Book your free intro call</a>
-<div class="stats">
-<div class="stat"><b>200+</b><span>clients coached</span></div>
-<div class="stat"><b>9 yrs</b><span>experience</span></div>
-<div class="stat"><b>4.9★</b><span>average rating</span></div>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Mara<i>·</i>Fitness</div>
+    <nav class="links">
+      <a href="#programs">Programs</a>
+      <a href="#proof">Results</a>
+      <a href="#book">Book</a>
+    </nav>
+    <a href="#book" class="btn">Free intro call</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap grid">
+    <div>
+      <span class="eyebrow reveal d1">Online &amp; in-person · Lisbon</span>
+      <h1 class="display reveal d2">Get strong.<br>Stay <span class="o">consistent.</span></h1>
+      <p class="sub reveal d3">1-on-1 coaching that fits your real life — personalised training, nutrition that sticks, weekly check-ins, and a coach who actually replies.</p>
+      <div class="actions reveal d4">
+        <a href="#book" class="btn">Book your free intro call <span class="arr">→</span></a>
+        <span class="note">No pressure. Just a plan.</span>
+      </div>
+    </div>
+    <div class="frame reveal d3">
+      <span class="badge">9 yrs coaching</span>
+      <div class="big">Train<br>with <span>intent.</span></div>
+      <div class="cap">Mara Costa — strength &amp; nutrition coach</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div class="wrap row">
+    <div class="stat reveal d1"><b>200+</b><span>clients coached</span></div>
+    <div class="stat reveal d2"><b>9 yrs</b><span>hands-on experience</span></div>
+    <div class="stat reveal d3"><b>4.9★</b><span>average rating</span></div>
+    <div class="stat reveal d4"><b>12kg</b><span>avg. client result</span></div>
+  </div>
 </div>
-</div></section>
 
-<section class="section" id="plans"><div class="wrap">
-<h2>Choose your program</h2>
-<p class="lead">Every plan starts with a free call to find your fit.</p>
-<div class="plans">
-<div class="plan"><h3>Kickstart</h3><div class="pr">€39<small>/mo</small></div><ul><li>Custom training plan</li><li>App-based workouts</li><li>Monthly check-in</li></ul><a href="#book" class="btn" style="width:100%;text-align:center;background:transparent;border:1px solid var(--acc);color:var(--acc)">Start</a></div>
-<div class="plan feat"><h3>Coached</h3><div class="pr">€89<small>/mo</small></div><ul><li>Everything in Kickstart</li><li>Nutrition coaching</li><li>Weekly video check-ins</li><li>Chat support all week</li></ul><a href="#book" class="btn" style="width:100%;text-align:center">Most popular</a></div>
-<div class="plan"><h3>1-on-1</h3><div class="pr">€59<small>/session</small></div><ul><li>In-person sessions</li><li>Hands-on technique</li><li>Fully tailored</li></ul><a href="#book" class="btn" style="width:100%;text-align:center;background:transparent;border:1px solid var(--acc);color:var(--acc)">Enquire</a></div>
-</div>
-</div></section>
+<section class="section" id="programs">
+  <div class="wrap">
+    <div class="head reveal d1">
+      <span class="eyebrow">Pick your path</span>
+      <h2 class="display">Choose your program</h2>
+      <p class="lead">Every plan starts with a free call to find your fit — then we build from there.</p>
+    </div>
 
-<section class="section" id="proof"><div class="wrap">
-<p class="quote">"I'd tried everything. Mara made it simple and I actually stuck with it — down 12kg and stronger than I've ever been."
-<span>— Joana R., coached 8 months</span></p>
-</div></section>
+    <div class="programs">
+      <a href="#book" class="prog reveal d1">
+        <div class="idx">01</div>
+        <div class="name">
+          <h3>Kickstart</h3>
+          <p>Custom training plan, app-based workouts, and a monthly check-in to keep you moving.</p>
+        </div>
+        <div class="price">€39<small>/mo</small></div>
+        <div class="go">Start <span class="arr">→</span></div>
+      </a>
 
-<section class="section" id="book"><div class="wrap">
-<div class="cta">
-<h2>Ready to start?</h2>
-<p>Book a free 15-minute call. No pressure, just a plan.</p>
-<a href="#" class="btn">Book my free call</a>
-</div>
-</div></section>
+      <a href="#book" class="prog reveal d2">
+        <div class="idx">02</div>
+        <div class="name">
+          <span class="feat-tag">Most popular</span>
+          <h3>Coached</h3>
+          <p>Everything in Kickstart, plus nutrition coaching, weekly video check-ins, and chat support all week.</p>
+        </div>
+        <div class="price">€89<small>/mo</small></div>
+        <div class="go">Start <span class="arr">→</span></div>
+      </a>
 
-<footer>© Mara Fitness · A sample site by <a href="../index.html" style="color:var(--acc)">Launch48</a></footer>
+      <a href="#book" class="prog reveal d3">
+        <div class="idx">03</div>
+        <div class="name">
+          <h3>1-on-1</h3>
+          <p>In-person sessions in Lisbon — hands-on technique work, fully tailored to your goals.</p>
+        </div>
+        <div class="price">€59<small>/session</small></div>
+        <div class="go">Enquire <span class="arr">→</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section proof" id="proof">
+  <div class="wrap">
+    <span class="mark" aria-hidden="true">“</span>
+    <div class="q reveal d1">
+      <p>I'd tried everything. Mara made it simple and I actually <em>stuck with it</em> — down 12kg and stronger than I've ever been.</p>
+      <div class="by">— Joana R., coached 8 months</div>
+    </div>
+  </div>
+</section>
+
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="panel reveal d1">
+      <span class="eyebrow">Ready when you are</span>
+      <h2 class="display">Let's build your plan</h2>
+      <p>Book a free 15-minute intro call. We'll talk goals, find the right program, and map your first month.</p>
+      <a href="#" class="btn">Book my free call <span class="arr">→</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap row">
+    <div>© Mara Fitness · Lisbon · <a href="mailto:hello@marafitness.pt">hello@marafitness.pt</a></div>
+    <div class="hours">
+      <span>Mon–Fri · 7am–8pm</span>
+      <span>Sat · 8am–1pm</span>
+    </div>
+    <div>A sample site built by <a href="../index.html">Launch48</a></div>
+  </div>
+</footer>
+
 </body>
 </html>

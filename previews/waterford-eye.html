@@ -1,83 +1,320 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Waterford Eye Specialists — Eye Care in Waterford</title>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f6f9fb;--ink:#16242e;--mut:#5c707d;--acc:#1f7a8c;--card:#fff}
+:root{
+  --paper:#f4efe6;        /* warm off-white base (~60%) */
+  --paper-2:#ece5d8;      /* secondary surface (~30%) */
+  --ink:#173b35;          /* deep teal-pine ink */
+  --ink-soft:#42605a;     /* muted ink */
+  --line:#d6cdbc;         /* hairline */
+  --accent:#c4763b;       /* single warm amber accent (~10%) */
+  --accent-deep:#a85f2a;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-h1,h2,h3,.brand{font-family:'Spectral',serif}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  font-size:17px;
+}
+.wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:500;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
-.btn{display:inline-block;background:var(--acc);color:#fff;padding:13px 26px;border-radius:8px;font-weight:600}
-.btn:hover{background:#176173}
-header{position:sticky;top:0;background:rgba(246,249,251,.9);backdrop-filter:blur(8px);border-bottom:1px solid #e1ebf0;z-index:10}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
-.brand{font-weight:700;font-size:1.3rem;color:var(--acc)}
-.links a{margin-left:24px;color:var(--mut);font-weight:500}.links a:hover{color:var(--acc)}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:70px 0}
-.hero h1{font-size:clamp(2.3rem,5vw,3.6rem);line-height:1.08;font-weight:700;margin-bottom:18px}
-.hero p{color:var(--mut);font-size:1.15rem;margin-bottom:26px;max-width:440px}
-.heroimg{height:360px;border-radius:18px;background:linear-gradient(135deg,#3ba3b8,#16505d);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Spectral';font-size:1.3rem;box-shadow:0 24px 60px rgba(31,122,140,.28)}
-.section{padding:60px 0}
-.section h2{font-size:clamp(1.8rem,4vw,2.5rem);text-align:center;margin-bottom:8px}
-.section .lead{text-align:center;color:var(--mut);margin-bottom:42px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:var(--card);border:1px solid #e1ebf0;border-radius:16px;padding:28px;text-align:center}
-.card .ic{font-size:2rem;margin-bottom:10px}
-.visit{background:#16242e;color:#f6f9fb;border-radius:20px;padding:50px;text-align:center}
-.visit h2{color:#fff}.visit p{color:#bcd0d8;margin:8px 0 22px}
-footer{text-align:center;color:var(--mut);padding:30px;font-size:.9rem}
-@media(max-width:780px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.links{display:none}}
+.eyebrow{
+  font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:600;color:var(--accent-deep);
+}
+
+/* ---------- buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  background:var(--accent);color:var(--paper);
+  padding:15px 30px;border-radius:2px;font-weight:600;font-size:.97rem;
+  letter-spacing:.01em;transition:background .25s ease,transform .25s ease;
+  border:none;cursor:pointer;
+}
+.btn:hover{background:var(--accent-deep);transform:translateY(-2px)}
+.btn .arr{transition:transform .25s ease}
+.btn:hover .arr{transform:translateX(4px)}
+.btn-sm{padding:11px 22px;font-size:.9rem}
+
+/* ---------- header ---------- */
+header{
+  position:sticky;top:0;z-index:30;
+  background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-block:18px;          /* vertical only — side padding comes from .wrap */
+}
+.brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem}
+.mark{
+  width:34px;height:34px;border:1.5px solid var(--ink);border-radius:50%;
+  display:grid;place-items:center;flex:0 0 auto;position:relative;
+}
+.mark::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--accent)}
+.links{display:flex;align-items:center;gap:34px}
+.links a.nl{font-size:.95rem;font-weight:500;color:var(--ink-soft);position:relative}
+.links a.nl::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1.5px;background:var(--accent);transition:width .25s ease}
+.links a.nl:hover{color:var(--ink)}
+.links a.nl:hover::after{width:100%}
+
+/* ---------- hero ---------- */
+.hero{padding:88px 0 76px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(2.7rem,6vw,4.6rem);line-height:1.02;margin:22px 0 24px}
+.hero h1 em{font-style:italic;color:var(--accent-deep);font-weight:400}
+.hero p.lead{font-size:1.2rem;color:var(--ink-soft);max-width:480px;margin-bottom:34px}
+.hero-meta{display:flex;gap:38px;margin-top:42px;flex-wrap:wrap}
+.hero-meta .stat{display:flex;flex-direction:column}
+.hero-meta .num{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;line-height:1}
+.hero-meta .lab{font-size:.82rem;color:var(--ink-soft);margin-top:6px;letter-spacing:.02em}
+
+/* vision-chart visual — no fake image, pure type */
+.chart{
+  border:1px solid var(--line);background:var(--paper-2);
+  border-radius:4px;padding:46px 40px;text-align:center;position:relative;
+  box-shadow:0 30px 60px -40px rgba(23,59,53,.5);
+}
+.chart::before{
+  content:"NO. 1 OPTICIANS · WATERFORD";
+  position:absolute;top:16px;left:0;right:0;text-align:center;
+  font-size:.62rem;letter-spacing:.3em;color:var(--ink-soft);font-weight:600;
+}
+.chart .row{font-family:'Fraunces',serif;font-weight:600;color:var(--ink);line-height:1.18;letter-spacing:.04em}
+.chart .row:nth-child(2){font-size:3.4rem;margin-top:26px}
+.chart .row:nth-child(3){font-size:2.3rem}
+.chart .row:nth-child(4){font-size:1.5rem;color:var(--ink-soft)}
+.chart .row:nth-child(5){font-size:1rem;color:var(--ink-soft)}
+.chart .foot{margin-top:24px;padding-top:18px;border-top:1px solid var(--line);font-family:'DM Sans';font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
+
+/* ---------- section scaffolding ---------- */
+.section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{max-width:640px;margin-bottom:54px}
+.sec-head h2{font-size:clamp(2rem,4.2vw,3rem);line-height:1.08;margin:14px 0 0}
+
+/* ---------- services: numbered list, not card soup ---------- */
+.svc{display:grid;grid-template-columns:1fr 1fr;gap:0 64px}
+.svc-item{
+  display:grid;grid-template-columns:auto 1fr;gap:26px;
+  padding:30px 0;border-top:1px solid var(--line);align-items:start;
+}
+.svc-item .idx{font-family:'Fraunces',serif;font-size:1.05rem;color:var(--accent-deep);font-weight:600;padding-top:5px}
+.svc-item h3{font-size:1.4rem;font-weight:600;margin-bottom:7px}
+.svc-item p{color:var(--ink-soft);font-size:.98rem}
+.svc-item .price{display:inline-block;margin-top:12px;font-family:'Fraunces',serif;font-weight:600;color:var(--ink);font-size:1.05rem;border-bottom:2px solid var(--accent);padding-bottom:2px}
+
+/* ---------- why: dark inset band ---------- */
+.band{background:var(--ink);color:var(--paper);border-top:none}
+.band .eyebrow{color:#e0a673}
+.band h2{color:var(--paper)}
+.band .sec-head p{color:#b6c8c3}
+.why{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.why-item h3{font-size:1.3rem;color:var(--paper);margin-bottom:10px}
+.why-item p{color:#aebfba;font-size:.97rem}
+.why-item .rule{width:38px;height:2px;background:var(--accent);margin-bottom:20px}
+
+/* ---------- visit / contact ---------- */
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:start}
+.visit h2{font-size:clamp(2rem,4.2vw,3rem);line-height:1.05;margin:14px 0 18px}
+.visit p.lead{color:var(--ink-soft);font-size:1.1rem;max-width:420px;margin-bottom:30px}
+.info{border-top:1px solid var(--line)}
+.info-row{display:grid;grid-template-columns:120px 1fr;gap:18px;padding:18px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.info-row .k{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);font-weight:600}
+.info-row .v{font-size:1.02rem}
+.info-row .v span{display:block;color:var(--ink-soft);font-size:.94rem}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:40px 0}
+.foot-grid{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot-grid .copy{font-size:.9rem;color:var(--ink-soft)}
+.foot-grid .built{font-size:.9rem;color:var(--ink-soft)}
+.foot-grid .built a{color:var(--accent-deep);font-weight:600;border-bottom:1px solid transparent;transition:border-color .2s}
+.foot-grid .built a:hover{border-color:var(--accent-deep)}
+
+/* ---------- reveal motion ---------- */
+.reveal{opacity:0;transform:translateY(22px);animation:rise .8s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.d1{animation-delay:.06s}.d2{animation-delay:.16s}.d3{animation-delay:.26s}
+.d4{animation-delay:.36s}.d5{animation-delay:.46s}
+@media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+
+/* ---------- responsive ---------- */
+@media(max-width:880px){
+  body{font-size:16px}
+  .hero-grid,.visit-grid{grid-template-columns:1fr;gap:48px}
+  .svc{grid-template-columns:1fr;gap:0}
+  .why{grid-template-columns:1fr;gap:38px}
+  .links{display:none}
+  .hero{padding:60px 0 56px}
+  .section{padding:60px 0}
+  .chart{padding:40px 26px}
+  .chart .row:nth-child(2){font-size:2.6rem}
+}
+@media(max-width:520px){
+  .info-row{grid-template-columns:1fr;gap:4px}
+  .hero-meta{gap:26px}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<div class="brand">Waterford Eye Specialists</div>
-<div class="links"><a href="#services">Services</a><a href="#why">Why us</a><a href="#visit">Book</a></div>
-<a href="#visit" class="btn" style="padding:9px 18px">Book an appointment</a>
-</div></header>
 
-<div class="wrap"><section class="hero">
-<div>
-<h1>Clear sight starts<br>with expert care.</h1>
-<p>Comprehensive eye examinations, advanced retinal imaging, and a hand-picked range of frames — all in the heart of Waterford.</p>
-<a href="#visit" class="btn">Book your eye exam</a>
-</div>
-<div class="heroimg">👁️ Trusted local eye care</div>
-</section></div>
+<header>
+  <div class="wrap nav">
+    <a href="#" class="brand"><span class="mark"></span>Waterford Eye Specialists</a>
+    <nav class="links">
+      <a class="nl" href="#services">Services</a>
+      <a class="nl" href="#why">Why us</a>
+      <a class="nl" href="#visit">Visit</a>
+      <a class="btn btn-sm" href="#visit">Book an eye test</a>
+    </nav>
+  </div>
+</header>
 
-<section class="section" id="services"><div class="wrap">
-<h2>What we offer</h2>
-<p class="lead">Looking after your eyes, from routine checks to detailed diagnostics.</p>
-<div class="cards">
-<div class="card"><div class="ic">🔬</div><h3>Comprehensive eye exams</h3><p>Thorough sight tests with clear explanations and no rush.</p></div>
-<div class="card"><div class="ic">📸</div><h3>OCT retinal imaging</h3><p>Advanced scans to detect issues early, before symptoms appear.</p></div>
-<div class="card"><div class="ic">👓</div><h3>Frames &amp; contact lenses</h3><p>A curated range of designer and everyday frames, expertly fitted.</p></div>
-</div>
-</div></section>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow reveal d1">Independent opticians · Est. Waterford</p>
+      <h1 class="reveal d2">See clearly,<br>with <em>specialist</em> care.</h1>
+      <p class="lead reveal d3">Unhurried eye examinations, advanced retinal imaging, and a carefully chosen range of frames — looked after by qualified optometrists in the heart of the city.</p>
+      <a class="btn reveal d4" href="#visit">Book an eye test <span class="arr">&rarr;</span></a>
+      <div class="hero-meta reveal d5">
+        <div class="stat"><span class="num">20&nbsp;min</span><span class="lab">Unrushed exams</span></div>
+        <div class="stat"><span class="num">OCT</span><span class="lab">Retinal imaging</span></div>
+        <div class="stat"><span class="num">300+</span><span class="lab">Frames in store</span></div>
+      </div>
+    </div>
+    <div class="chart reveal d4" aria-hidden="true">
+      <div class="row">E</div>
+      <div class="row">F P</div>
+      <div class="row">T O Z</div>
+      <div class="row">L P E D</div>
+      <div class="row">P E C F D</div>
+      <div class="foot">Clarity you can measure</div>
+    </div>
+  </div>
+</section>
 
-<section class="section" id="why" style="background:#eaf3f6"><div class="wrap">
-<h2>Why patients choose us</h2>
-<p class="lead">Specialist care you can rely on.</p>
-<div class="cards">
-<div class="card"><div class="ic">🧑‍⚕️</div><h3>Experienced specialists</h3><p>Qualified optometrists who take the time to get it right.</p></div>
-<div class="card"><div class="ic">⏱️</div><h3>Easy appointments</h3><p>Convenient booking and minimal waiting times.</p></div>
-<div class="card"><div class="ic">📍</div><h3>Central Waterford</h3><p>Easy to find, with a warm and professional welcome.</p></div>
-</div>
-</div></section>
+<!-- SERVICES -->
+<section class="section" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">What we offer</p>
+      <h2>Care for your eyes, from routine checks to detailed diagnostics.</h2>
+    </div>
+    <div class="svc">
+      <div class="svc-item">
+        <span class="idx">01</span>
+        <div>
+          <h3>Comprehensive eye exams</h3>
+          <p>A thorough sight test with clear explanations and no rush — covering vision, eye health and prescription.</p>
+          <span class="price">from &euro;45</span>
+        </div>
+      </div>
+      <div class="svc-item">
+        <span class="idx">02</span>
+        <div>
+          <h3>OCT retinal imaging</h3>
+          <p>Advanced cross-section scans that detect glaucoma and macular issues early, often before symptoms appear.</p>
+          <span class="price">&euro;30 add-on</span>
+        </div>
+      </div>
+      <div class="svc-item">
+        <span class="idx">03</span>
+        <div>
+          <h3>Glasses &amp; frames</h3>
+          <p>A curated range of designer and everyday frames, expertly fitted and dispensed to your prescription.</p>
+          <span class="price">from &euro;99</span>
+        </div>
+      </div>
+      <div class="svc-item">
+        <span class="idx">04</span>
+        <div>
+          <h3>Contact lenses</h3>
+          <p>Fitting, trials and aftercare for daily, monthly and specialist lenses, with ongoing support.</p>
+          <span class="price">fitting from &euro;40</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="section" id="visit"><div class="wrap">
-<div class="visit">
-<h2>Book your appointment</h2>
-<p>Call us or drop in — we'll find a time that suits you.</p>
-<a href="#" class="btn">Get in touch</a>
-</div>
-</div></section>
+<!-- WHY -->
+<section class="section band" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Why patients choose us</p>
+      <h2>Specialist care you can rely on.</h2>
+    </div>
+    <div class="why">
+      <div class="why-item">
+        <div class="rule"></div>
+        <h3>Experienced optometrists</h3>
+        <p>Fully qualified clinicians who take the time to get the detail right, every visit.</p>
+      </div>
+      <div class="why-item">
+        <div class="rule"></div>
+        <h3>Easy appointments</h3>
+        <p>Convenient booking, short waiting times, and reminders when your next test is due.</p>
+      </div>
+      <div class="why-item">
+        <div class="rule"></div>
+        <h3>Central Waterford</h3>
+        <p>Easy to find on the high street, with a calm and professional welcome.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-<footer>© Waterford Eye Specialists · Free preview site designed by <a href="../index.html" style="color:var(--acc)">Launch48</a></footer>
+<!-- VISIT -->
+<section class="section" id="visit">
+  <div class="wrap visit-grid">
+    <div class="visit">
+      <p class="eyebrow">Book your visit</p>
+      <h2>Ready when you are.</h2>
+      <p class="lead">Book an eye test online or call us — we'll find a time that suits you and have everything ready when you arrive.</p>
+      <a class="btn" href="tel:+35351000000">Book an eye test <span class="arr">&rarr;</span></a>
+    </div>
+    <div class="info">
+      <div class="info-row">
+        <span class="k">Address</span>
+        <span class="v">14 Michael Street<span>Waterford, X91 Y2K3</span></span>
+      </div>
+      <div class="info-row">
+        <span class="k">Phone</span>
+        <span class="v">+353 51 000 000<span>Reception &amp; bookings</span></span>
+      </div>
+      <div class="info-row">
+        <span class="k">Email</span>
+        <span class="v">hello@waterfordeye.ie</span>
+      </div>
+      <div class="info-row">
+        <span class="k">Hours</span>
+        <span class="v">Mon&ndash;Fri 9:00&ndash;17:30<span>Sat 9:30&ndash;13:00 · Sun closed</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot-grid">
+    <span class="copy">&copy; Waterford Eye Specialists · Waterford, Ireland</span>
+    <span class="built">a sample site built by <a href="../index.html">Launch48</a></span>
+  </div>
+</footer>
+
 </body>
 </html>

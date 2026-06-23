@@ -1,86 +1,334 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wollaton Drives &amp; Patios — Driveways in Nottingham</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wollaton Drives &amp; Patios — Driveways &amp; Patios in Nottingham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,800&family=Familjen+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f5f6f4;--ink:#1d2520;--mut:#5e6b63;--acc:#3a7d44;--acc2:#c8821a;--card:#fff}
+:root{
+  --paper:#efe9de;       /* warm off-white base ~60% */
+  --paper-2:#e6ded0;     /* secondary surface ~30% */
+  --ink:#23211c;         /* near-black warm */
+  --ink-soft:#5b574c;    /* muted text */
+  --line:#d4cbb9;        /* hairlines */
+  --slate:#2b2a25;       /* dark band */
+  --rust:#b4451f;        /* single accent ~10% */
+  --rust-dk:#943815;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-h1,h2,h3,.brand{font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px}
+body{
+  font-family:'Familjen Grotesk',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+.wrap{max-width:1140px;margin:0 auto;padding-left:24px;padding-right:24px}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:800;line-height:1.02;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
-.btn{display:inline-block;background:var(--acc2);color:#fff;padding:14px 28px;border-radius:8px;font-weight:600}
-.btn:hover{background:#a96c12}
-header{position:sticky;top:0;background:rgba(245,246,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e4de;z-index:10}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
-.brand{font-weight:700;font-size:1.5rem;color:var(--acc);text-transform:uppercase}
-.links a{margin-left:24px;color:var(--mut);font-weight:500}.links a:hover{color:var(--acc)}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:68px 0}
-.hero h1{font-size:clamp(2.6rem,5.5vw,4.2rem);line-height:.98;font-weight:700;text-transform:uppercase;margin-bottom:18px}
-.hero p{color:var(--mut);font-size:1.15rem;margin-bottom:26px;max-width:450px}
-.heroimg{height:380px;border-radius:14px;background:linear-gradient(135deg,#6b7a6e,#2e3a31);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Barlow Condensed';font-size:1.5rem;text-transform:uppercase;box-shadow:0 24px 60px rgba(46,58,49,.3)}
-.trust{display:flex;gap:26px;flex-wrap:wrap;color:var(--mut);font-weight:600;font-size:.95rem}
-.section{padding:60px 0}
-.section h2{font-size:clamp(2rem,4.5vw,3rem);text-align:center;text-transform:uppercase;margin-bottom:8px}
-.section .lead{text-align:center;color:var(--mut);margin-bottom:42px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:var(--card);border:1px solid #e0e4de;border-radius:14px;padding:28px;text-align:center}
-.card .ic{font-size:2rem;margin-bottom:10px}
-.card h3{font-size:1.4rem}
-.visit{background:#1d2520;color:#f5f6f4;border-radius:18px;padding:50px;text-align:center}
-.visit h2{color:#fff}.visit p{color:#c3ccc6;margin:8px 0 22px}
-footer{text-align:center;color:var(--mut);padding:30px;font-size:.9rem}
-@media(max-width:780px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.links{display:none}}
+.eyebrow{
+  font-family:'Familjen Grotesk',sans-serif;
+  font-size:.78rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--rust);
+}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:20;background:rgba(239,233,222,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-block:16px;gap:20px}
+.brand{font-family:'Fraunces',serif;font-weight:800;font-size:1.3rem;letter-spacing:-.02em}
+.brand span{color:var(--rust)}
+.links{display:flex;gap:30px;align-items:center}
+.links a{font-size:.95rem;font-weight:500;color:var(--ink-soft);position:relative}
+.links a::after{content:"";position:absolute;left:0;bottom:-4px;width:0;height:2px;background:var(--rust);transition:width .25s ease}
+.links a:hover{color:var(--ink)}.links a:hover::after{width:100%}
+
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  background:var(--rust);color:var(--paper);
+  font-family:'Familjen Grotesk',sans-serif;font-weight:600;font-size:1rem;
+  padding:15px 30px;border-radius:2px;
+  box-shadow:0 1px 0 var(--rust-dk);
+  transition:transform .18s ease,background .18s ease;
+}
+.btn:hover{background:var(--rust-dk);transform:translateY(-2px)}
+.btn.sm{padding:10px 20px;font-size:.92rem}
+.btn .arr{transition:transform .18s ease}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* ---------- hero ---------- */
+.hero{position:relative;padding-top:88px;padding-bottom:96px}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:72px;align-items:end}
+.hero h1{font-size:clamp(3.1rem,8vw,6.4rem)}
+.hero h1 em{font-style:italic;font-weight:600;color:var(--rust)}
+.hero .sub{font-size:1.18rem;color:var(--ink-soft);max-width:30ch;margin:28px 0 36px}
+.hero-cta{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.hero-cta .secondary{font-weight:600;font-size:.98rem;border-bottom:1px solid var(--ink);padding-bottom:2px}
+.hero-cta .secondary:hover{color:var(--rust);border-color:var(--rust)}
+
+.hero-aside{padding-bottom:8px}
+.stat{border-top:1px solid var(--line);padding:22px 0}
+.stat:last-child{border-bottom:1px solid var(--line)}
+.stat .n{font-family:'Fraunces',serif;font-weight:800;font-size:2.6rem;line-height:1;color:var(--ink)}
+.stat .l{font-size:.9rem;color:var(--ink-soft);margin-top:6px}
+
+.hero-rule{margin-top:64px;display:flex;flex-wrap:wrap;gap:14px 34px;align-items:center;
+  border-top:1px solid var(--line);padding-top:26px;color:var(--ink-soft);font-size:.92rem;font-weight:500}
+.hero-rule .dot{width:6px;height:6px;border-radius:50%;background:var(--rust);display:inline-block;margin-right:10px;vertical-align:middle}
+
+/* ---------- services ---------- */
+.services{padding:96px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(2.2rem,5vw,3.6rem)}
+.sec-head p{color:var(--ink-soft);max-width:34ch}
+.svc{display:grid;grid-template-columns:1fr;gap:0}
+.svc-row{
+  display:grid;grid-template-columns:5rem 1fr auto;gap:40px;align-items:baseline;
+  padding:38px 0;border-top:1px solid var(--line);
+  transition:padding-left .25s ease;
+}
+.svc-row:last-child{border-bottom:1px solid var(--line)}
+.svc-row:hover{padding-left:14px}
+.svc-row .idx{font-family:'Fraunces',serif;font-weight:600;font-style:italic;font-size:1.3rem;color:var(--rust)}
+.svc-row h3{font-size:clamp(1.5rem,3vw,2.1rem);margin-bottom:10px}
+.svc-row p{color:var(--ink-soft);max-width:46ch}
+.svc-row .price{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;white-space:nowrap;color:var(--ink)}
+.svc-row .price small{display:block;font-family:'Familjen Grotesk';font-weight:500;font-size:.78rem;color:var(--ink-soft);text-align:right}
+
+/* ---------- why (dark band) ---------- */
+.why{background:var(--slate);color:var(--paper);padding:100px 0}
+.why .eyebrow{color:#d98a5e}
+.why h2{font-size:clamp(2.2rem,5vw,3.4rem);color:var(--paper);max-width:16ch;margin:18px 0 60px}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px}
+.why-item{border-top:1px solid rgba(239,233,222,.22);padding-top:24px}
+.why-item h3{font-size:1.4rem;color:var(--paper);margin-bottom:12px}
+.why-item p{color:#bdb6a6;font-size:.98rem}
+.why-item .num{font-family:'Fraunces',serif;font-style:italic;color:#d98a5e;font-size:1rem;margin-bottom:14px;display:block}
+
+/* ---------- area ---------- */
+.area{padding:90px 0;border-top:1px solid var(--line)}
+.area-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:64px;align-items:center}
+.area h2{font-size:clamp(2rem,4.5vw,3rem);margin:16px 0 18px}
+.area p{color:var(--ink-soft);max-width:40ch}
+.places{display:flex;flex-wrap:wrap;gap:10px}
+.place{font-size:.92rem;font-weight:500;color:var(--ink);background:var(--paper-2);border:1px solid var(--line);
+  padding:8px 16px;border-radius:2px}
+
+/* ---------- quote / CTA ---------- */
+.quote{padding:100px 0}
+.quote-card{
+  background:var(--slate);color:var(--paper);border-radius:3px;
+  padding:clamp(40px,7vw,84px);text-align:center;position:relative;overflow:hidden;
+}
+.quote-card::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 100% at 50% 0%,rgba(180,69,31,.28),transparent 60%);pointer-events:none}
+.quote-card .eyebrow{color:#d98a5e;position:relative}
+.quote-card h2{font-size:clamp(2.3rem,5.5vw,4rem);color:var(--paper);margin:18px auto 18px;max-width:18ch;position:relative}
+.quote-card p{color:#cabfae;max-width:42ch;margin:0 auto 38px;position:relative;font-size:1.08rem}
+.quote-card .btn{position:relative}
+.quote-meta{margin-top:30px;color:#9c9486;font-size:.9rem;position:relative}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--line);padding:42px 0 56px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.foot .brand{font-size:1.15rem}
+.foot .contact{display:flex;gap:28px;flex-wrap:wrap;font-size:.95rem;color:var(--ink-soft);font-weight:500}
+.foot .contact a:hover{color:var(--rust)}
+.foot-note{margin-top:30px;padding-top:22px;border-top:1px solid var(--line);font-size:.86rem;color:var(--ink-soft)}
+.foot-note a{color:var(--rust);font-weight:600}
+
+/* ---------- reveal motion ---------- */
+.reveal{opacity:0;transform:translateY(22px);animation:rise .7s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes rise{to{opacity:1;transform:none}}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}
+.d4{animation-delay:.35s}.d5{animation-delay:.45s}.d6{animation-delay:.55s}
+@media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+
+/* ---------- responsive ---------- */
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:44px;align-items:start}
+  .hero-aside{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+  .stat{border-top:1px solid var(--line);border-bottom:none;padding:18px 0}
+  .why-grid{grid-template-columns:1fr;gap:34px}
+  .area-grid{grid-template-columns:1fr;gap:36px}
+}
+@media(max-width:680px){
+  .links{display:none}
+  .nav{padding-block:14px}
+  .hero{padding-top:56px;padding-bottom:64px}
+  .hero-aside{grid-template-columns:1fr}
+  .stat{border-bottom:1px solid var(--line);border-top:none}
+  .stat:first-child{border-top:1px solid var(--line)}
+  .svc-row{grid-template-columns:1fr;gap:8px;padding:28px 0}
+  .svc-row .idx{font-size:1.05rem}
+  .svc-row .price{text-align:left}.svc-row .price small{text-align:left}
+  .foot{flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<div class="brand">Wollaton Drives &amp; Patios</div>
-<div class="links"><a href="#services">Services</a><a href="#why">Why us</a><a href="#quote">Quote</a></div>
-<a href="#quote" class="btn" style="padding:9px 18px">Free quote</a>
-</div></header>
 
-<div class="wrap"><section class="hero">
-<div>
-<h1>Driveways &amp;<br>patios done right.</h1>
-<p>Block paving, resin, and patios across Nottingham — built to last, finished on time, and quoted honestly. No deposit, no surprises.</p>
-<a href="#quote" class="btn">Get your free quote</a>
-<div class="trust" style="margin-top:22px"><span>✔ Free site visits</span><span>✔ Fully insured</span><span>✔ Local &amp; trusted</span></div>
-</div>
-<div class="heroimg">🧱 Quality groundwork</div>
-</section></div>
+<header>
+  <div class="wrap nav">
+    <div class="brand">Wollaton <span>Drives</span></div>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#why">Why us</a>
+      <a href="#area">Areas</a>
+    </nav>
+    <a href="#quote" class="btn sm">Free quote</a>
+  </div>
+</header>
 
-<section class="section" id="services"><div class="wrap">
-<h2>What we do</h2>
-<p class="lead">From the first dig to the final sweep.</p>
-<div class="cards">
-<div class="card"><div class="ic">🚗</div><h3>Block-paved drives</h3><p>Durable, great-looking driveways laid on solid foundations.</p></div>
-<div class="card"><div class="ic">✨</div><h3>Resin drives</h3><p>Smooth, low-maintenance resin-bound surfaces in any colour.</p></div>
-<div class="card"><div class="ic">🌿</div><h3>Patios &amp; paths</h3><p>Patios, paths and garden landscaping built to suit your space.</p></div>
-</div>
-</div></section>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="eyebrow reveal d1">Driveways &amp; patios · Nottingham</p>
+          <h1 class="reveal d2">Groundwork<br>done <em>properly.</em></h1>
+          <p class="sub reveal d3">Block paving, resin and patios laid on solid foundations — finished on time and quoted honestly. No deposit, no surprises.</p>
+          <div class="hero-cta reveal d4">
+            <a href="#quote" class="btn">Get your free quote <span class="arr">&rarr;</span></a>
+            <a href="#services" class="secondary">See what we do</a>
+          </div>
+        </div>
+        <aside class="hero-aside reveal d5">
+          <div class="stat"><div class="n">18 yrs</div><div class="l">Laying drives across Notts</div></div>
+          <div class="stat"><div class="n">10 yr</div><div class="l">Workmanship guarantee</div></div>
+          <div class="stat"><div class="n">£0</div><div class="l">Deposit — pay on completion</div></div>
+        </aside>
+      </div>
+      <div class="hero-rule reveal d6">
+        <span><span class="dot"></span>Free site visits</span>
+        <span><span class="dot"></span>Fully insured</span>
+        <span><span class="dot"></span>Local &amp; recommended</span>
+        <span><span class="dot"></span>Proper sub-base every time</span>
+      </div>
+    </div>
+  </section>
 
-<section class="section" id="why" style="background:#eaeee8"><div class="wrap">
-<h2>Why choose us</h2>
-<p class="lead">A local team that turns up and finishes the job.</p>
-<div class="cards">
-<div class="card"><div class="ic">📋</div><h3>Honest quotes</h3><p>Clear, fixed pricing with no hidden extras.</p></div>
-<div class="card"><div class="ic">🛠️</div><h3>Proper groundwork</h3><p>Done right beneath the surface, so it lasts for years.</p></div>
-<div class="card"><div class="ic">⭐</div><h3>Recommended locally</h3><p>Trusted by homeowners across Wollaton and beyond.</p></div>
-</div>
-</div></section>
+  <section class="services" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 class="reveal">What we lay</h2>
+        <p class="reveal d1">From the first dig to the final sweep — one team, start to finish.</p>
+      </div>
+      <div class="svc">
+        <div class="svc-row reveal">
+          <span class="idx">01</span>
+          <div>
+            <h3>Block-paved drives</h3>
+            <p>Durable, great-looking driveways laid on a deep, compacted sub-base so they hold their level for decades.</p>
+          </div>
+          <div class="price">from £75/m²<small>supply &amp; lay</small></div>
+        </div>
+        <div class="svc-row reveal d1">
+          <span class="idx">02</span>
+          <div>
+            <h3>Resin-bound drives</h3>
+            <p>Smooth, permeable, low-maintenance resin surfaces in any colour — no weeds, no puddles, no fuss.</p>
+          </div>
+          <div class="price">from £90/m²<small>supply &amp; lay</small></div>
+        </div>
+        <div class="svc-row reveal d2">
+          <span class="idx">03</span>
+          <div>
+            <h3>Patios &amp; paths</h3>
+            <p>Porcelain and natural-stone patios, garden paths and edging — built and finished to suit your space.</p>
+          </div>
+          <div class="price">from £80/m²<small>supply &amp; lay</small></div>
+        </div>
+        <div class="svc-row reveal d3">
+          <span class="idx">04</span>
+          <div>
+            <h3>Drainage &amp; groundwork</h3>
+            <p>Aco channels, soakaways and full excavation done right beneath the surface, so the finish lasts.</p>
+          </div>
+          <div class="price">quoted per job<small>site visit first</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<section class="section" id="quote"><div class="wrap">
-<div class="visit">
-<h2>Get a free, no-obligation quote</h2>
-<p>Tell us about your project — we'll visit, measure up, and quote for free.</p>
-<a href="#" class="btn">Request your quote</a>
-</div>
-</div></section>
+  <section class="why" id="why">
+    <div class="wrap">
+      <p class="eyebrow reveal">Why homeowners pick us</p>
+      <h2 class="reveal d1">A local team that turns up and finishes the job.</h2>
+      <div class="why-grid">
+        <div class="why-item reveal d1">
+          <span class="num">No.1</span>
+          <h3>Honest fixed quotes</h3>
+          <p>Clear pricing measured on site, written down, and held — no hidden extras once we start.</p>
+        </div>
+        <div class="why-item reveal d2">
+          <span class="num">No.2</span>
+          <h3>Proper foundations</h3>
+          <p>The part you never see is the part that matters. We dig deep and compact properly every time.</p>
+        </div>
+        <div class="why-item reveal d3">
+          <span class="num">No.3</span>
+          <h3>Recommended locally</h3>
+          <p>Trusted by homeowners across Wollaton and beyond, with a 10-year workmanship guarantee.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<footer>© Wollaton Drives &amp; Patios · Free preview site designed by <a href="../index.html" style="color:var(--acc)">Launch48</a></footer>
+  <section class="area" id="area">
+    <div class="wrap">
+      <div class="area-grid">
+        <div>
+          <p class="eyebrow reveal">Where we work</p>
+          <h2 class="reveal d1">Covering Nottingham &amp; the surrounding villages.</h2>
+          <p class="reveal d2">Based in Wollaton, we work across NG postcodes and the wider Nottingham area. Not sure if we reach you? Just ask.</p>
+        </div>
+        <div class="places reveal d2">
+          <span class="place">Wollaton</span>
+          <span class="place">Beeston</span>
+          <span class="place">Bramcote</span>
+          <span class="place">Chilwell</span>
+          <span class="place">Lenton</span>
+          <span class="place">Radford</span>
+          <span class="place">Bilborough</span>
+          <span class="place">Stapleford</span>
+          <span class="place">Toton</span>
+          <span class="place">West Bridgford</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quote" id="quote">
+    <div class="wrap">
+      <div class="quote-card reveal">
+        <p class="eyebrow">Free &amp; no obligation</p>
+        <h2>Get a quote for your driveway.</h2>
+        <p>Tell us about your project — we'll come out, measure up, and give you a fixed price in writing. No pressure, no deposit.</p>
+        <a href="tel:01159000000" class="btn">Request your free quote <span class="arr">&rarr;</span></a>
+        <div class="quote-meta">Call 0115 900 0000 · Mon–Sat, 8am–6pm</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand">Wollaton <span>Drives</span> &amp; Patios</div>
+      <div class="contact">
+        <a href="tel:01159000000">0115 900 0000</a>
+        <a href="mailto:hello@wollatondrives.co.uk">hello@wollatondrives.co.uk</a>
+        <span>Wollaton, Nottingham</span>
+      </div>
+    </div>
+    <div class="foot-note">A sample site built by <a href="../index.html">Launch48</a></div>
+  </div>
+</footer>
+
 </body>
 </html>

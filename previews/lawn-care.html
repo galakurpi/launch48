@@ -1,86 +1,400 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GreenBlade Lawn Care — Mowing & Yard Care Done Right</title>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenBlade Lawn Care — Mowing & Yard Care, Done Right</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#f5f6f4;--ink:#1d2520;--mut:#5e6b63;--acc:#3a7d44;--acc2:#c8821a;--card:#fff}
+:root{
+  --paper:#f3efe4;
+  --paper-2:#ece6d6;
+  --ink:#1f2b22;
+  --ink-soft:#46554a;
+  --forest:#23402c;
+  --brass:#a9772f;
+  --line:#d2cbb8;
+}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65}
-.wrap{max-width:1080px;margin:0 auto;padding:0 22px}
-h1,h2,h3,.brand{font-family:'Barlow Condensed',sans-serif;letter-spacing:.5px}
+body{
+  font-family:'Hanken Grotesk',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding-left:28px;padding-right:28px}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-.01em}
 a{color:inherit;text-decoration:none}
-.btn{display:inline-block;background:var(--acc2);color:#fff;padding:14px 28px;border-radius:8px;font-weight:600}
-.btn:hover{background:#a96c12}
-header{position:sticky;top:0;background:rgba(245,246,244,.92);backdrop-filter:blur(8px);border-bottom:1px solid #e0e4de;z-index:10}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0}
-.brand{font-weight:700;font-size:1.5rem;color:var(--acc);text-transform:uppercase}
-.links a{margin-left:24px;color:var(--mut);font-weight:500}.links a:hover{color:var(--acc)}
-.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:68px 0}
-.hero h1{font-size:clamp(2.6rem,5.5vw,4.2rem);line-height:.98;font-weight:700;text-transform:uppercase;margin-bottom:18px}
-.hero p{color:var(--mut);font-size:1.15rem;margin-bottom:26px;max-width:450px}
-.heroimg{height:380px;border-radius:14px;background:linear-gradient(135deg,#4f8f57,#23351f);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Barlow Condensed';font-size:1.5rem;text-transform:uppercase;box-shadow:0 24px 60px rgba(35,53,31,.3)}
-.trust{display:flex;gap:26px;flex-wrap:wrap;color:var(--mut);font-weight:600;font-size:.95rem}
-.section{padding:60px 0}
-.section h2{font-size:clamp(2rem,4.5vw,3rem);text-align:center;text-transform:uppercase;margin-bottom:8px}
-.section .lead{text-align:center;color:var(--mut);margin-bottom:42px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:var(--card);border:1px solid #e0e4de;border-radius:14px;padding:28px;text-align:center}
-.card .ic{font-size:2rem;margin-bottom:10px}
-.card h3{font-size:1.4rem}
-.visit{background:#1d2520;color:#f5f6f4;border-radius:18px;padding:50px;text-align:center}
-.visit h2{color:#fff}.visit p{color:#c3ccc6;margin:8px 0 22px}
-footer{text-align:center;color:var(--mut);padding:30px;font-size:.9rem}
-@media(max-width:780px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.links{display:none}}
+img{max-width:100%}
+
+/* ——— Header ——— */
+header{
+  position:sticky;top:0;z-index:20;
+  background:rgba(243,239,228,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding-block:18px;
+}
+.brand{display:flex;align-items:baseline;gap:10px}
+.brand .mark{font-family:'Fraunces',serif;font-weight:600;font-size:1.4rem;color:var(--forest)}
+.brand .est{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--brass)}
+.nav .links{display:flex;align-items:center;gap:30px}
+.nav .links a{font-size:.92rem;color:var(--ink-soft);font-weight:500}
+.nav .links a:hover{color:var(--forest)}
+.nav-cta{
+  font-size:.85rem;font-weight:600;color:var(--forest);
+  border:1px solid var(--forest);border-radius:999px;
+  padding:9px 18px;
+}
+.nav-cta:hover{background:var(--forest);color:var(--paper)}
+
+/* ——— Buttons ——— */
+.btn{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--forest);color:var(--paper);
+  font-weight:600;font-size:1rem;
+  padding:16px 30px;border-radius:999px;
+  transition:transform .25s ease,background .25s ease;
+}
+.btn:hover{background:#1a3122;transform:translateY(-2px)}
+.btn .arrow{transition:transform .25s ease}
+.btn:hover .arrow{transform:translateX(4px)}
+
+/* ——— Hero ——— */
+.hero{
+  display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:end;
+  padding-top:84px;padding-bottom:72px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:12px;
+  font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--brass);font-weight:600;margin-bottom:26px;
+}
+.eyebrow::before{content:"";width:34px;height:1px;background:var(--brass)}
+.hero h1{
+  font-size:clamp(3rem,7.2vw,5.6rem);
+  line-height:1.0;color:var(--ink);
+}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--forest)}
+.hero .sub{
+  margin-top:26px;max-width:440px;
+  font-size:1.12rem;color:var(--ink-soft);
+}
+.hero .actions{margin-top:36px;display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.phone{font-size:.95rem;color:var(--ink-soft)}
+.phone strong{font-family:'Fraunces',serif;font-size:1.15rem;color:var(--ink);display:block;letter-spacing:.01em}
+
+.hero-aside{padding-bottom:6px}
+.figure{
+  position:relative;border-radius:18px;overflow:hidden;
+  border:1px solid var(--line);
+  background:
+    repeating-linear-gradient(115deg, rgba(35,64,44,.10) 0 22px, rgba(35,64,44,.16) 22px 44px),
+    linear-gradient(160deg,#2f5237,#1b2f21);
+  aspect-ratio:4/5;
+  box-shadow:0 30px 60px -28px rgba(27,47,33,.55);
+}
+.figure::after{
+  content:"";position:absolute;inset:0;
+  background:radial-gradient(120% 80% at 30% 10%, rgba(255,255,255,.10), transparent 60%);
+}
+.figure .stripes{
+  position:absolute;left:0;right:0;bottom:0;height:55%;
+  background:repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 14px, transparent 14px 30px);
+  mix-blend-mode:overlay;
+}
+.fig-tag{
+  position:absolute;left:18px;bottom:18px;z-index:2;
+  font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;
+  color:var(--paper);
+}
+.fig-rating{
+  position:absolute;top:18px;right:18px;z-index:2;
+  background:var(--paper);color:var(--forest);
+  font-size:.78rem;font-weight:600;letter-spacing:.04em;
+  padding:7px 13px;border-radius:999px;
+}
+
+/* ——— Trust strip ——— */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.strip .row{
+  display:flex;flex-wrap:wrap;gap:18px 48px;align-items:center;
+  padding-block:22px;
+}
+.strip .row span{
+  font-size:.86rem;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--ink-soft);font-weight:600;
+  display:flex;align-items:center;gap:10px;
+}
+.strip .row span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass)}
+
+/* ——— Sections ——— */
+.section{padding-top:96px;padding-bottom:96px}
+.sec-head{
+  display:flex;align-items:baseline;gap:18px;margin-bottom:54px;
+}
+.sec-num{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:1.05rem;color:var(--brass);
+}
+.sec-head h2{font-size:clamp(2rem,4.4vw,3.1rem);color:var(--ink);line-height:1.05}
+.sec-head .note{margin-left:auto;max-width:320px;color:var(--ink-soft);font-size:.98rem;text-align:right}
+
+/* services list (no cards) */
+.svc{border-top:1px solid var(--line)}
+.svc .item{
+  display:grid;grid-template-columns:64px 1fr auto;gap:30px;align-items:baseline;
+  padding-block:34px;border-bottom:1px solid var(--line);
+  transition:padding-left .3s ease;
+}
+.svc .item:hover{padding-left:10px}
+.svc .idx{font-family:'Fraunces',serif;font-style:italic;color:var(--brass);font-size:1.2rem}
+.svc .body h3{font-size:1.55rem;color:var(--ink);margin-bottom:6px}
+.svc .body p{color:var(--ink-soft);max-width:520px}
+.svc .price{
+  font-family:'Fraunces',serif;font-size:1.05rem;color:var(--forest);
+  white-space:nowrap;
+}
+.svc .price small{display:block;font-family:'Hanken Grotesk';font-size:.72rem;color:var(--ink-soft);letter-spacing:.04em;text-transform:uppercase;font-weight:600}
+
+/* why — dark band */
+.band{background:var(--forest);color:var(--paper)}
+.band .section{padding-top:104px;padding-bottom:104px}
+.band .sec-head h2{color:var(--paper)}
+.band .sec-num{color:#cfa15e}
+.band .sec-head .note{color:#bcccc0}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+.why-grid .why{padding:34px 32px 34px 0}
+.why-grid .why+.why{padding-left:32px;border-left:1px solid rgba(255,255,255,.16)}
+.why .wn{font-family:'Fraunces',serif;font-style:italic;color:#cfa15e;font-size:1.1rem;margin-bottom:14px}
+.why h3{font-size:1.45rem;color:var(--paper);margin-bottom:10px}
+.why p{color:#bcccc0;font-size:.98rem}
+
+/* area */
+.area{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.area h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.08;margin-bottom:18px}
+.area p{color:var(--ink-soft);max-width:440px;margin-bottom:24px}
+.towns{display:flex;flex-wrap:wrap;gap:10px}
+.towns span{
+  border:1px solid var(--line);border-radius:999px;
+  padding:8px 16px;font-size:.9rem;color:var(--ink-soft);background:var(--paper-2);
+}
+.map{
+  border:1px solid var(--line);border-radius:18px;aspect-ratio:5/4;
+  background:
+    radial-gradient(60% 60% at 50% 45%, rgba(169,119,47,.16), transparent 70%),
+    repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 46px),
+    repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 46px),
+    var(--paper-2);
+  position:relative;
+}
+.map .pin{
+  position:absolute;top:46%;left:50%;transform:translate(-50%,-50%);
+  width:16px;height:16px;border-radius:50% 50% 50% 0;
+  background:var(--brass);rotate:-45deg;
+  box-shadow:0 0 0 8px rgba(169,119,47,.18);
+}
+.map .pin-label{
+  position:absolute;top:38%;left:50%;transform:translateX(-50%);
+  font-family:'Fraunces',serif;font-style:italic;font-size:.95rem;color:var(--forest);
+}
+
+/* quote CTA */
+.quote{padding-block:108px;text-align:center}
+.quote .eyebrow{justify-content:center}
+.quote .eyebrow::after{content:"";width:34px;height:1px;background:var(--brass)}
+.quote h2{font-size:clamp(2.4rem,5vw,3.8rem);line-height:1.04;max-width:14ch;margin:0 auto 18px}
+.quote p{color:var(--ink-soft);max-width:480px;margin:0 auto 36px;font-size:1.08rem}
+
+/* footer */
+footer{border-top:1px solid var(--line)}
+.foot{
+  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+  padding-block:36px;font-size:.9rem;color:var(--ink-soft);
+}
+.foot a{color:var(--forest);font-weight:600}
+.foot a:hover{text-decoration:underline}
+.foot .made{font-style:italic;font-family:'Fraunces',serif}
+
+/* ——— Reveal motion ——— */
+.reveal{opacity:0;transform:translateY(22px);animation:rise .8s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+.d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}
+.d4{animation-delay:.35s}.d5{animation-delay:.45s}.d6{animation-delay:.55s}
+@media(prefers-reduced-motion:reduce){.reveal{animation:none;opacity:1;transform:none}}
+
+/* ——— Responsive ——— */
+@media(max-width:880px){
+  .hero{grid-template-columns:1fr;gap:44px;padding-top:60px}
+  .hero-aside{max-width:420px}
+  .nav .links{display:none}
+  .why-grid{grid-template-columns:1fr}
+  .why-grid .why{padding:30px 0;border-left:none!important}
+  .why-grid .why+.why{padding-left:0;border-top:1px solid rgba(255,255,255,.16)}
+  .area{grid-template-columns:1fr;gap:40px}
+  .sec-head{flex-wrap:wrap}
+  .sec-head .note{margin-left:0;text-align:left;max-width:none}
+  .svc .item{grid-template-columns:36px 1fr;gap:16px 18px}
+  .svc .price{grid-column:2;text-align:left}
+}
+@media(max-width:560px){
+  .wrap{padding-left:20px;padding-right:20px}
+  .section{padding-top:68px;padding-bottom:68px}
+}
 </style>
 </head>
 <body>
-<header><div class="wrap nav">
-<div class="brand">GreenBlade Lawn Care</div>
-<div class="links"><a href="#services">Services</a><a href="#why">Why us</a><a href="#quote">Quote</a></div>
-<a href="#quote" class="btn" style="padding:9px 18px">Free quote</a>
-</div></header>
 
-<div class="wrap"><section class="hero">
-<div>
-<h1>A sharper lawn,<br>every week.</h1>
-<p>Reliable mowing, edging, and yard care for homes and businesses in your neighborhood — on schedule, fairly priced, and left spotless every visit.</p>
-<a href="#quote" class="btn">Get your free quote</a>
-<div class="trust" style="margin-top:22px"><span>✔ Free estimates</span><span>✔ Fully insured</span><span>✔ Locally owned</span></div>
-</div>
-<div class="heroimg">🌱 Fresh-cut every time</div>
-</section></div>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <span class="mark">GreenBlade</span>
+      <span class="est">Lawn &amp; Yard Care</span>
+    </div>
+    <nav class="links">
+      <a href="#services">Services</a>
+      <a href="#why">Why GreenBlade</a>
+      <a href="#area">Service Area</a>
+      <a href="#quote" class="nav-cta">Free quote</a>
+    </nav>
+  </div>
+</header>
 
-<section class="section" id="services"><div class="wrap">
-<h2>What we do</h2>
-<p class="lead">Everything your yard needs, from first cut to fall cleanup.</p>
-<div class="cards">
-<div class="card"><div class="ic">🚜</div><h3>Mowing &amp; edging</h3><p>Weekly or bi-weekly cuts with crisp edges and a clean finish.</p></div>
-<div class="card"><div class="ic">🌿</div><h3>Fertilizing &amp; weed control</h3><p>Seasonal treatments that keep your grass thick, green, and healthy.</p></div>
-<div class="card"><div class="ic">🍂</div><h3>Cleanups &amp; hedges</h3><p>Leaf removal, hedge trimming, and seasonal yard cleanups.</p></div>
-</div>
-</div></section>
+<main>
+  <!-- HERO -->
+  <section class="wrap hero">
+    <div>
+      <span class="eyebrow reveal d1">Locally owned · Fully insured</span>
+      <h1 class="reveal d2">A sharper lawn,<br><em>every single week.</em></h1>
+      <p class="sub reveal d3">Dependable mowing, edging, and seasonal yard care for homes and businesses across the neighborhood — on schedule, fairly priced, and left spotless every visit.</p>
+      <div class="actions reveal d4">
+        <a href="#quote" class="btn">Get your free quote <span class="arrow">→</span></a>
+        <div class="phone">Or call the crew<strong>(555) 412‑7788</strong></div>
+      </div>
+    </div>
+    <aside class="hero-aside reveal d5">
+      <div class="figure">
+        <span class="fig-rating">★ 4.9 · 200+ yards</span>
+        <div class="stripes"></div>
+        <span class="fig-tag">Fresh‑cut, clean‑edged, every time.</span>
+      </div>
+    </aside>
+  </section>
 
-<section class="section" id="why" style="background:#eaeee8"><div class="wrap">
-<h2>Why choose us</h2>
-<p class="lead">A local crew that shows up and gets it done.</p>
-<div class="cards">
-<div class="card"><div class="ic">📋</div><h3>Honest pricing</h3><p>Clear, flat per-visit rates with no surprise fees.</p></div>
-<div class="card"><div class="ic">📅</div><h3>On schedule</h3><p>We come when we say we will — rain plans included.</p></div>
-<div class="card"><div class="ic">⭐</div><h3>Recommended locally</h3><p>Trusted by homeowners and businesses across the area.</p></div>
-</div>
-</div></section>
+  <!-- TRUST STRIP -->
+  <div class="strip">
+    <div class="wrap row reveal d6">
+      <span>Free estimates</span>
+      <span>Flat per‑visit pricing</span>
+      <span>Same crew, every visit</span>
+      <span>Satisfaction guaranteed</span>
+    </div>
+  </div>
 
-<section class="section" id="quote"><div class="wrap">
-<div class="visit">
-<h2>Get a free, no-obligation quote</h2>
-<p>Tell us about your yard — we'll take a look and send a fast, fair quote.</p>
-<a href="#" class="btn">Request your quote</a>
-</div>
-</div></section>
+  <!-- SERVICES -->
+  <section class="section wrap" id="services">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2>What we do</h2>
+      <p class="note">Everything your yard needs, from the first cut of spring to the final fall cleanup.</p>
+    </div>
+    <div class="svc">
+      <div class="item reveal d1">
+        <span class="idx">i.</span>
+        <div class="body">
+          <h3>Mowing &amp; edging</h3>
+          <p>Weekly or bi‑weekly cuts with crisp, hand‑finished edges and a blown‑clean walk every visit.</p>
+        </div>
+        <div class="price">from $45<small>per visit</small></div>
+      </div>
+      <div class="item reveal d2">
+        <span class="idx">ii.</span>
+        <div class="body">
+          <h3>Fertilizing &amp; weed control</h3>
+          <p>Seasonal treatment programs that keep your grass thick, deep‑green, and crowding out the weeds.</p>
+        </div>
+        <div class="price">from $69<small>per application</small></div>
+      </div>
+      <div class="item reveal d3">
+        <span class="idx">iii.</span>
+        <div class="body">
+          <h3>Cleanups &amp; hedge trimming</h3>
+          <p>Leaf removal, hedge and shrub shaping, and full spring &amp; fall yard cleanups, hauled away for you.</p>
+        </div>
+        <div class="price">custom quote<small>by yard size</small></div>
+      </div>
+    </div>
+  </section>
 
-<footer>© GreenBlade Lawn Care · Free preview site designed by <a href="../index.html" style="color:var(--acc)">Launch48</a></footer>
+  <!-- WHY (dark band) -->
+  <div class="band" id="why">
+    <section class="section wrap">
+      <div class="sec-head reveal">
+        <span class="sec-num">02</span>
+        <h2>Why GreenBlade</h2>
+        <p class="note">A small local crew that shows up when it says it will — and treats your yard like its own.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why reveal d1">
+          <div class="wn">No. 1</div>
+          <h3>Honest, flat pricing</h3>
+          <p>Clear per‑visit rates quoted up front. No surprise add‑ons, no padded invoices, no fine print.</p>
+        </div>
+        <div class="why reveal d2">
+          <div class="wn">No. 2</div>
+          <h3>On schedule, rain or shine</h3>
+          <p>We come the day we say we will, with a built‑in rain plan so your yard never falls behind.</p>
+        </div>
+        <div class="why reveal d3">
+          <div class="wn">No. 3</div>
+          <h3>Trusted by neighbors</h3>
+          <p>Two hundred‑plus homes and businesses rely on us, with a 4.9‑star average across the area.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- SERVICE AREA -->
+  <section class="section wrap area" id="area">
+    <div class="reveal">
+      <span class="sec-num">03</span>
+      <h2 style="margin-top:14px">Proudly serving<br>the whole valley.</h2>
+      <p>If you're within about twenty minutes of downtown, you're on our route. Not sure? Send your address with your quote and we'll confirm same day.</p>
+      <div class="towns">
+        <span>Riverton</span><span>Maple Grove</span><span>Oakdale</span>
+        <span>Cedar Hills</span><span>Westbrook</span><span>Fairview</span><span>Lakeshore</span>
+      </div>
+    </div>
+    <div class="map reveal d2" aria-hidden="true">
+      <span class="pin-label">Riverton</span>
+      <span class="pin"></span>
+    </div>
+  </section>
+
+  <!-- QUOTE CTA -->
+  <section class="band" id="quote">
+    <div class="wrap quote">
+      <span class="eyebrow reveal" style="color:#cfa15e">No obligation</span>
+      <h2 class="reveal d1" style="color:var(--paper)">Get a fast, fair quote for your yard.</h2>
+      <p class="reveal d2" style="color:#bcccc0">Tell us a little about your property and we'll take a look, then send a straightforward per‑visit price — usually the same day.</p>
+      <a href="#" class="btn reveal d3" style="background:#cfa15e;color:#1b2f21">Request your free quote <span class="arrow">→</span></a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <span>© GreenBlade Lawn &amp; Yard Care · (555) 412‑7788 · hello@greenblade.co</span>
+    <span class="made">a sample site built by <a href="../index.html">Launch48</a></span>
+  </div>
+</footer>
+
 </body>
 </html>
